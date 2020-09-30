@@ -1,3 +1,5 @@
+--What needs to be done--
+
 Primeiro vou precisar criar o raio, depois lança-lo, tracá-lo, anotar a influencia no pixel.
 
 1. admin_rays
@@ -26,3 +28,9 @@ Primeiro vou precisar criar o raio, depois lança-lo, tracá-lo, anotar a influe
   constrói imagem
 
 7. output imagem
+
+--Lets apply TDD--
+
+Um teste por funcao, um tester q roda todos os testes.
+
+Quando for fazer uma função criar um teste pra aquela funcao, enquanto escreve a funcao escrever o teste. Ah, a minha funçao tem q retornar 0 se o input for x, cria lá o teste, implementa a funcionalidade. Ah, agora se for y, tem q retornar 1. Cria o teste, implementa funcionalidade.
