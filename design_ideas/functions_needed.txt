@@ -1,0 +1,28 @@
+Primeiro vou precisar criar o raio, depois lança-lo, tracá-lo, anotar a influencia no pixel.
+
+1. admin_rays
+  quantos raios criar?
+  quais direçoes lançar raios?
+  quando termina o processo?
+  
+2. creates_rays
+  direçao, origem?
+  quais as propriedades do raio?
+  tem cor?
+  
+3. trace_rays_until_object
+  como decidir se bateu no objeto?
+  refraçao, reflexao especular, reflexao difusa, absorçao? pra cada tipo uma funcao
+  se reflexao difusa, criar novos raios?
+  
+4. creates_reflected_rays
+  intensidade, cor, direcao, o q muda?
+  
+5. hits_light?
+  atingindo uma luz, como mapear essa influencia nos pixels?
+  como criar sombras?
+  
+6. store_pixel_data
+  constrói imagem
+
+7. output imagem
