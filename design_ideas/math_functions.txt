@@ -7,8 +7,13 @@ escaleVector(vector, escalar), returns escalar*Vector
 isUnitary(vector), returns 1 or 0
 makeUnitary(vector), return vector
 
+sumVector
+subtractVector
+escaleVector(vector, escalar), returns escalar*Vector
+
 Matrix operantions
 
-matrix_sum
-matrix_subtraction
-matrix_
+sumMatrix
+subtractMatrix
+multiplyMatrix
+transposeMatrix
