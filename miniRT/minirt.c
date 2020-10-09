@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   create_vector_and_point.c                          :+:      :+:    :+:   */
+/*   minirt.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/05 15:08:25 by vde-melo          #+#    #+#             */
-/*   Updated: 2020/10/07 18:13:59 by vde-melo         ###   ########.fr       */
+/*   Created: 2020/10/02 18:08:04 by vde-melo          #+#    #+#             */
+/*   Updated: 2020/10/08 13:33:20 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mymath.h"
+#include "minirt.h"
 
-t_point		*create_point(float x, float y, float z)
+int		minirt()
 {
-	t_point	*point;
-
-	point = malloc(sizeof(t_point));
-	point->x = x;
-	point->y = y;
-	point->z = z;
+	test_makefile_tests();
+	test_makefile_mymath();
+	printf("\nMake compilou tudo!");
+	return 0;
 }
 
-t_vector	*create_vector(t_point *origin, t_point *destin)
-	t_vector	*vector;
-
-	vector = malloc(sizeof(t_vector))
+int		main()
+{
+	minirt();
+	return 0;
+}

@@ -1,5 +1,5 @@
 # Tasks
 
-  * Make program compile using math library and print hello world
-  * Make program compile using test and math libraries
+  * Create a static library out of mymath, .a extension
+  * Compile tests + minirt using libmymath.a
   * Make nested struct work
