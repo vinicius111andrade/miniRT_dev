@@ -6,7 +6,7 @@
 #    By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/07 17:23:51 by vde-melo          #+#    #+#              #
-#    Updated: 2020/10/09 15:43:04 by vde-melo         ###   ########.fr        #
+#    Updated: 2020/10/09 16:21:08 by vde-melo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,8 +51,8 @@ ${MYMATH_LIB}: ${SRCS_MYMATH} ${F_MYMATH}/mymath.h
 ${NAME}: ${OBJS_ALL}
 	${CC} ${OBJS_ALL} ${MYMATH_LIB} -o ${NAME}
 
-${OBJS_ALL}: ${SRCS_ALL}  ${F_TESTS}/tests.h ${F_MINIRT}/minirt.h
-	${CC} ${FLAGS} -c ${SRCS_ALL} -I ${INCLUDES}
+${OBJS_ALL}: ${SRCS_ALL} ${F_TESTS}/tests.h ${F_MINIRT}/minirt.h
+	${CC} ${FLAGS} -c ${SRCS_ALL}
 
 clean:
 	rm -rf *.o
@@ -62,3 +62,7 @@ fclean: clean
 	rm -rf ${NAME}
 
 re: fclean all
+
+smart: all clean
+
+.PHONY : all clean fclean re smart

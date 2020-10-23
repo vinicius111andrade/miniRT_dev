@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minirt.h                                           :+:      :+:    :+:   */
+/*   create_point.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/02 17:47:49 by vde-melo          #+#    #+#             */
-/*   Updated: 2020/10/09 15:58:10 by vde-melo         ###   ########.fr       */
+/*   Created: 2020/10/09 16:07:09 by vde-melo          #+#    #+#             */
+/*   Updated: 2020/10/09 17:26:32 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIRT_H
-# define MINIRT_H
+#include "mymath.h"
 
-#include <math.h>
-#include "../mymath/mymath.h"
-#include "../tests/tests.h"
+t_point		*create_point(float x, float y, float z)
+{
+	t_point	*point;
 
-int		minirt();
-
-#endif
+	point = malloc(sizeof(t_point));
+	point->x = x;
+	point->y = y;
+	point->z = z;
+}

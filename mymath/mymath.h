@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 18:06:49 by vde-melo          #+#    #+#             */
-/*   Updated: 2020/10/09 13:19:00 by vde-melo         ###   ########.fr       */
+/*   Updated: 2020/10/09 15:59:28 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include <math.h>
 #include <stdlib.h>
-/*
+
 typedef struct	s_point
 {
 	float		x;
@@ -39,8 +39,5 @@ typedef struct	s_vector
 }				t_vector;
 
 float			vectorMagnitude(t_vector *vector);
-*/
-
-void	test_makefile_mymath();
 
 #endif

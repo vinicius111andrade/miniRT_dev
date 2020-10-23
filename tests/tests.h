@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/07 17:11:35 by vde-melo          #+#    #+#             */
-/*   Updated: 2020/10/07 17:46:09 by vde-melo         ###   ########.fr       */
+/*   Updated: 2020/10/09 16:01:38 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-void	test_makefile_tests();
+
 
 #endif
