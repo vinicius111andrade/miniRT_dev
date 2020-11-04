@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vector_operations_0.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 15:23:33 by vde-melo          #+#    #+#             */
-/*   Updated: 2020/10/28 17:19:54 by vde-melo         ###   ########.fr       */
+/*   Updated: 2020/11/04 14:27:01 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ t_vector		v_add(t_vector a, t_vector b)
 	return (sum);
 }
 
-t_vector		v_substract(t_vector a, t_vector b)
+t_vector		v_subtract(t_vector a, t_vector b)
 {
 	return (v_add(a, v_invert_direction(b)));
 }

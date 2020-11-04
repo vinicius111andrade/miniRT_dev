@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libvectors.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 14:59:11 by vde-melo          #+#    #+#             */
-/*   Updated: 2020/10/28 17:19:52 by vde-melo         ###   ########.fr       */
+/*   Updated: 2020/11/04 14:19:40 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct	s_vector
 t_vector		v_define(double x, double y, double z);
 t_vector		v_invert_direction(t_vector vector);
 t_vector		v_add(t_vector a, t_vector b);
-t_vector		v_substract(t_vector a, t_vector b);
+t_vector		v_subtract(t_vector a, t_vector b);
 double			v_dotproduct(t_vector a, t_vector b);
 
 t_vector		v_crossproduct(t_vector a, t_vector b);

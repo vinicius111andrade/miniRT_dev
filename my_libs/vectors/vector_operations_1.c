@@ -6,11 +6,12 @@
 /*   By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 15:54:51 by vde-melo          #+#    #+#             */
-/*   Updated: 2020/10/29 16:13:21 by vde-melo         ###   ########.fr       */
+/*   Updated: 2020/11/04 15:35:39 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libvectors.h"
+# include <math.h>
 
 t_vector		v_crossproduct(t_vector a, t_vector b)
 {
