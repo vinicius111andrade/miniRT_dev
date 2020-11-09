@@ -62,5 +62,14 @@ int		main()
 	else
 		printf("\nERRO v_scale\n");
 
-	printf("\nNumber of correct functions: %d out of 14\n", correct);
+	if (test_v_distance(0, 3, 4) == 1)
+		correct++;
+	else
+		printf("\nERRO v_distance\n");
+
+	printf("\nNumber of correct functions: %d out of 12\n", correct);
+
+	test_x_axis_rotation();
+	test_y_axis_rotation();
+	test_z_axis_rotation();
 }

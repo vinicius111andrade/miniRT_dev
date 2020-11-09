@@ -17,5 +17,9 @@ int		test_v_normalize(double x, double y, double z);
 int		test_v_cos(double xa, double ya, double za, double xb, double yb, double zb);
 int		test_v_sin(double xa, double ya, double za, double xb, double yb, double zb);
 int		test_v_scale(double x, double y, double z, double scalar);
+int		test_v_distance(double x, double y, double z);
+void	test_x_axis_rotation();
+void	test_y_axis_rotation();
+void	test_z_axis_rotation();
 
 #endif
