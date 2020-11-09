@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   vector_operations_2.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 16:27:25 by vde-melo          #+#    #+#             */
-/*   Updated: 2020/10/28 16:59:03 by vde-melo         ###   ########.fr       */
+/*   Updated: 2020/11/05 21:46:18 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libvectors.h"
 
 /*
-**	v_distance calculates the distance between the points that are at 
+**	v_distance calculates the distance between the points that are at
 **		the end of vectors v1 and v2
 **
 **	To rotate a vector we use a 3x3 rotation matrix, to simplify the
@@ -31,9 +31,9 @@ t_vector		v_scale(double scalar, t_vector vec)
 	return (new_vec);
 }
 
-double		v_distance(t_vector v1, t_vector v2)
+double			v_distance(t_vector v1, t_vector v2)
 {
-	double d;
+	double		d;
 
 	d = sqrt(pow(v2.x - v1.x, 2) + pow(v2.y - v1.y, 2) + pow(v2.z - v1.z, 2));
 	return (d);
@@ -45,7 +45,7 @@ t_vector		x_axis_rotation(t_vector vec, double deg_angle)
 	t_vector	row2;
 	t_vector	row3;
 	t_vector	rotated;
-	double	rad_angle;
+	double		rad_angle;
 
 	rad_angle = deg_angle * M_PI / 180;
 	row1 = (t_vector){1, 0, 0};
@@ -63,7 +63,7 @@ t_vector		y_axis_rotation(t_vector vec, double deg_angle)
 	t_vector	row2;
 	t_vector	row3;
 	t_vector	rotated;
-	double	rad_angle;
+	double		rad_angle;
 
 	rad_angle = deg_angle * M_PI / 180;
 	row1 = (t_vector){cos(rad_angle), 0, sin(rad_angle)};
@@ -81,7 +81,7 @@ t_vector		z_axis_rotation(t_vector vec, double deg_angle)
 	t_vector	row2;
 	t_vector	row3;
 	t_vector	rotated;
-	double	rad_angle;
+	double		rad_angle;
 
 	rad_angle = deg_angle * M_PI / 180;
 	row1 = (t_vector){cos(rad_angle), -sin(rad_angle), 0};

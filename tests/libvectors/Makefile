@@ -6,19 +6,20 @@
 #    By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/29 15:55:21 by vde-melo          #+#    #+#              #
-#    Updated: 2020/11/04 15:28:15 by vde-melo         ###   ########.fr        #
+#    Updated: 2020/11/05 21:46:20 by vde-melo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		= test_libvectors
 
-SRCS		= test_main.c test_operations_0.c test_operations_1.c
+SRCS		= test_main.c test_operations_0.c test_operations_1.c \
+				test_operations_2.c
 
 OBJS		= ${SRCS:.c=.o}
 
 PATH_LIB	= ../../my_libs/vectors/
 
-LIB			= $(PATH_LIB)libvectors.a
+LIBS		= $(PATH_LIB)libvectors.a -lm
 
 CC			= gcc
 
@@ -28,7 +29,7 @@ CFLAGS		= -Wall -Wextra -Werror
 
 ${NAME}:	${OBJS}
 			make -C $(PATH_LIB)
-			${CC} ${CFLAGS} $(OBJS) $(LIB) -o ${NAME}
+			${CC} ${CFLAGS} $(OBJS) $(LIBS) -o ${NAME}
 
 all:		${NAME}
 

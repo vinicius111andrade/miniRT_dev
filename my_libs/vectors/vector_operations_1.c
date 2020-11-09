@@ -6,12 +6,12 @@
 /*   By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/28 15:54:51 by vde-melo          #+#    #+#             */
-/*   Updated: 2020/11/04 15:35:39 by vde-melo         ###   ########.fr       */
+/*   Updated: 2020/11/05 20:50:37 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libvectors.h"
-# include <math.h>
+#include <math.h>
 
 t_vector		v_crossproduct(t_vector a, t_vector b)
 {
@@ -23,12 +23,12 @@ t_vector		v_crossproduct(t_vector a, t_vector b)
 	return (product);
 }
 
-double		v_length(t_vector v)
+double			v_length(t_vector v)
 {
 	return (sqrt(v_dotproduct(v, v)));
 }
 
-t_vector	v_normalize(t_vector vec)
+t_vector		v_normalize(t_vector vec)
 {
 	t_vector	unit_vec;
 	double		norm;
@@ -40,13 +40,12 @@ t_vector	v_normalize(t_vector vec)
 	return (unit_vec);
 }
 
-double		v_cos(t_vector a, t_vector b)
+double			v_cos(t_vector a, t_vector b)
 {
 	return (v_dotproduct(a, b) / (v_length(a) * v_length(b)));
 }
 
-double		v_sin(t_vector a, t_vector b)
+double			v_sin(t_vector a, t_vector b)
 {
 	return (sqrt(1 - pow(v_cos(a, b), 2)));
 }
-
