@@ -6,7 +6,7 @@
 #    By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/07 17:23:51 by vde-melo          #+#    #+#              #
-#    Updated: 2020/11/20 20:00:40 by vde-melo         ###   ########.fr        #
+#    Updated: 2020/11/20 20:28:41 by vde-melo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,6 +21,8 @@ LIBFT_DIR	= ./libs/libft
 
 SRCS		= ${SRCS_DIR}/minirt.c
 OBJS		= $(patsubst ${SRCS_DIR}/%.c, ${OBJS_DIR}/%.o, ${SRCS})
+
+LIBS		= ${VECTORS_DIR}/libvectors.a -lm
 
 CC			=	clang
 

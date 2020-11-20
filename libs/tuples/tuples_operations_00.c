@@ -1,24 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minirt.h                                           :+:      :+:    :+:   */
+/*   tuples_operations_00.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/02 17:47:49 by vde-melo          #+#    #+#             */
-/*   Updated: 2020/11/20 20:22:51 by vde-melo         ###   ########.fr       */
+/*   Created: 2020/11/20 22:17:07 by vde-melo          #+#    #+#             */
+/*   Updated: 2020/11/20 22:26:38 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINIRT_H
-# define MINIRT_H
+#include "libvectors.h"
 
-# include <math.h>
-# include "../libs/minilibx-linux/mlx.h"
-# include "../libs/minilibx-linux/mlx_int.h"
-# include "../libs/libft/includes/libft.h"
-# include "../libs/vectors/libvectors.h"
+t_tuples		point(double x, double y, double z)
+{
+	t_tuples	tuple;
 
-int		minirt();
+	tuple.x = x;
+	tuple.y = y;
+	tuple.z = z;
+	tuple.w = 1;
+	return (tuple);
+}
 
-#endif
+t_tuples		vector(double x, double y, double z)
+{
+	t_tuples	tuple;
+
+	tuple.x = x;
+	tuple.y = y;
+	tuple.z = z;
+	tuple.w = 0;
+	return (tuple);
+}
