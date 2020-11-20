@@ -6,63 +6,68 @@
 #    By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/07 17:23:51 by vde-melo          #+#    #+#              #
-#    Updated: 2020/10/09 16:21:08 by vde-melo         ###   ########.fr        #
+#    Updated: 2020/11/20 20:00:40 by vde-melo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		=	miniRT_with_test
 
-F_TESTS		=	./tests
+INCLUDES	= ./srcs
+SRCS_DIR	= ./srcs
+OBJS_DIR	= ./objs
+MLX_DIR		= ./libs/minilibx-linux
+VECTORS_DIR	= ./libs/vectors
+LIBFT_DIR	= ./libs/libft
 
-F_MYMATH	=	./mymath
+SRCS		= ${SRCS_DIR}/minirt.c
+OBJS		= $(patsubst ${SRCS_DIR}/%.c, ${OBJS_DIR}/%.o, ${SRCS})
 
-F_MINIRT	=	./miniRT
+CC			=	clang
 
-SRCS_TESTS	=	${F_TESTS}/test_makefile_tests.c
+C_FLAGS		=	-c						\
+				-Wall					\
+				-Wextra					\
+				-Werror					\
+				-I${MLX_DIR}			\
+				-I${VECTORS_DIR}		\
+				-I${LIBFT_DIR}/includes	\
+				-I${INCLUDES}
 
-SRCS_MYMATH	=	${F_MYMATH}/test_makefile_mymath.c
+L_FLAGS		=	-L${MLX_DIR}			\
+				-lm						\
+				-lmlx_Linux				\
+				-lXext					\
+				-lX11
 
-SRCS_MINIRT	=	${F_MINIRT}/minirt.c
 
-SRCS_ALL	=	${SRCS_TESTS} ${SRCS_MINIRT}
+all: $(NAME)
 
-OBJS_TESTS	=	test_makefile_tests.o
+$(NAME): ${OBJS}
+	$(CC) $^ $(L_FLAGS) -o $@
 
-OBJS_MYMATH	=	test_makefile_mymath.o
+$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c ${MLX} ${LIBFT} ${VECTORS}
+	mkdir -p $(OBJS_DIR)
+	$(CC) $(C_FLAGS) $< -o $@
 
-OBJS_MINIRT	=	minirt.o
+$(MLX):
+	$(MAKE) -C $(MLX_DIR)
 
-OBJS_ALL	=	${OBJS_TESTS} ${OBJS_MINIRT}
+$(LIBFT):
+	$(MAKE) -C $(LIBFT_DIR)
 
-MYMATH_LIB	=	libmymath.a
-
-CC = gcc
-
-FLAGS = -Wall -Wextra -Werror
-
-INCLUDES = ${F_TESTS} ${F_MYMATH} ${F_MINIRT}
-
-all: ${MYMATH_LIB} ${NAME}
-
-${MYMATH_LIB}: ${SRCS_MYMATH} ${F_MYMATH}/mymath.h
-	${CC} ${FLAGS} -I ${F_MYMATH} -c ${SRCS_MYMATH}
-	ar rcs ${MYMATH_LIB} ${OBJS_MYMATH}
-
-${NAME}: ${OBJS_ALL}
-	${CC} ${OBJS_ALL} ${MYMATH_LIB} -o ${NAME}
-
-${OBJS_ALL}: ${SRCS_ALL} ${F_TESTS}/tests.h ${F_MINIRT}/minirt.h
-	${CC} ${FLAGS} -c ${SRCS_ALL}
+$(VECTOR):
+	$(MAKE) -C $(VECTORS_DIR)
 
 clean:
-	rm -rf *.o
+			rm -rf ${OBJS}
+			make clean -C ${LIBFT_DIR}
+			make clean -C ${VECTORS_DIR}
 
-fclean: clean
-	rm -rf ${MYMATH_LIB}
-	rm -rf ${NAME}
+fclean:		clean
+			rm -f ${NAME}
+			make fclean -C ${LIBFT_DIR}
+			make fclean -C ${VECTORS_DIR}
 
-re: fclean all
+re:			fclean all
 
-smart: all clean
-
-.PHONY : all clean fclean re smart
+PHONY:		all clean fclean re
