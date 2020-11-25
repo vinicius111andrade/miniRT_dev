@@ -6,11 +6,9 @@
 /*   By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 21:50:22 by vde-melo          #+#    #+#             */
-/*   Updated: 2020/11/20 21:51:40 by vde-melo         ###   ########.fr       */
+/*   Updated: 2020/11/25 20:06:19 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #ifndef LIBVECTORS_H
 # define LIBVECTORS_H
@@ -25,7 +23,8 @@ typedef struct	s_tuples
 	double		w;
 }				t_tuples;
 
-t_tuples		tup_define(double x, double y, double z, double w);
+t_tuples		point(double x, double y, double z);
+t_tuples		vector(double x, double y, double z);
 t_tuples		tup_invert_direction(t_tuples tuples);
 t_tuples		tup_add(t_tuples a, t_tuples b);
 t_tuples		tup_subtract(t_tuples a, t_tuples b);
