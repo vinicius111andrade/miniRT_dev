@@ -23,3 +23,6 @@ The magnitude of a vector is it's length.
 
 ### Normalize
 Receives a vector and returns the corresponding unit vector.
+
+### Cross Product
+Receives two vectors and returns the cross product vector. The result is always perpendicular to the inputs.
