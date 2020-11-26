@@ -6,13 +6,13 @@
 #    By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/28 15:16:40 by vde-melo          #+#    #+#              #
-#    Updated: 2020/11/25 21:23:04 by vde-melo         ###   ########.fr        #
+#    Updated: 2020/11/26 16:59:32 by vde-melo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= libtuples.a
+NAME	= libcolors.a
 
-SRCS	= tuples_operations_00.c tuples_operations_01.c
+SRCS	= colors_operations_00.c colors_operations_01.c
 
 OBJS	= ${SRCS:.c=.o}
 
