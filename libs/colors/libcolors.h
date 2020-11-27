@@ -6,14 +6,12 @@
 /*   By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 20:06:08 by vde-melo          #+#    #+#             */
-/*   Updated: 2020/11/27 16:26:23 by vde-melo         ###   ########.fr       */
+/*   Updated: 2020/11/27 17:27:48 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBCOLORS_H
 # define LIBCOLORS_H
-
-# include <math.h>
 
 typedef struct	s_colors
 {
