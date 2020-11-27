@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 20:08:21 by vde-melo          #+#    #+#             */
-/*   Updated: 2020/11/27 16:26:56 by vde-melo         ###   ########.fr       */
+/*   Updated: 2020/11/27 18:17:07 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,15 @@ int					argb_to_int(t_colors a)
 	green = (int)(fit.g * 255);
 	blue = (int)(fit.b * 255);
 	return (alpha << 24 | red << 16 | green << 8 | blue);
+}
+
+t_colors			hadamard_product(t_colors a, t_colors b)
+{
+	t_colors	prod;
+
+	prod.a = a.a * b.a;
+	prod.r = a.r * b.r;
+	prod.g = a.g * b.g;
+	prod.b = a.b * b.b;
+	return (prod);
 }

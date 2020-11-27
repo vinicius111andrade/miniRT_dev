@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 20:06:08 by vde-melo          #+#    #+#             */
-/*   Updated: 2020/11/27 17:27:48 by vde-melo         ###   ########.fr       */
+/*   Updated: 2020/11/27 18:18:45 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ t_colors		scale_colors(double scalar, t_colors a);
 t_colors		norm_colors(t_colors a);
 t_colors		refit_colors(t_colors a);
 int				argb_to_int(t_colors a);
+t_colors		hadamard_product(t_colors a, t_colors b);
 
 #endif

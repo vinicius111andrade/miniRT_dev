@@ -8,6 +8,7 @@ int		main(void)
 	t_colors	clr3;
 	t_colors	clr4;
 	t_colors	clr5;
+	t_colors	clr6;
 	int			out1;
 	int			out2;
 	int			out3;
@@ -18,6 +19,7 @@ int		main(void)
 	clr3 = add_colors(clr1, clr2);
 	clr4 = sub_colors(clr1, clr3);
 	clr5 = scale_colors(2, clr1);
+	clr6 = hadamard_product(clr1, clr2);
 
 	printf("\nFirst check if it is creating the structs properly\n");
 	printf("Expected: 60, 100, 0, 0\n");
@@ -52,6 +54,10 @@ int		main(void)
 	printf("Out1: %d\n", out1);
 	printf("Out2: %d\n", out2);
 	printf("Out3: %d\n", out3);
+
+	printf("\nCheck if Hadamard Product works\n");
+	printf("Expected: 0,01845444, 0, 0, 0\n");
+	printf("Clr6: %f, %f, %f, %f\n", clr6.a, clr6.r, clr6.g, clr6.b);
 
 	return (0);
 }
