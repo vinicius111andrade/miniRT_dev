@@ -6,45 +6,37 @@
 /*   By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 13:21:28 by vde-melo          #+#    #+#             */
-/*   Updated: 2020/11/10 18:32:32 by vde-melo         ###   ########.fr       */
+/*   Updated: 2020/11/27 21:08:56 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/libft.h"
 
-/*
- ** procura needle no haystack
- ** s1 == haystack;
- ** s2 == needle;
-*/
-
-char		*ft_strnstr(const char *s1, const char *s2, size_t max_len)
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t	inicio_teste;
-	size_t	i1;
-	size_t	i2;
-	size_t	s2_len;
+	size_t i;
+	size_t j;
 
-	inicio_teste = 0;
-	s2_len = ft_strlen((char *)s2);
-	if (s2_len == 0)
-		return ((char*)s1);
-	while (inicio_teste < max_len && s1[inicio_teste])
+	i = 0;
+	if (*needle == '\0')
 	{
-		i2 = 0;
-		if (s1[inicio_teste] == s2[i2])
+		return ((char *)haystack);
+	}
+	while (haystack[i] != '\0' && i < len)
+	{
+		if (haystack[i] == needle[0])
 		{
-			i1 = inicio_teste + 1;
-			i2++;
-			while (i1 < max_len && s1[i1] && s2[i2] && s1[i1] == s2[i2])
+			j = 1;
+			while ((haystack[i + j] == needle[j]) && (i + j) < len &&
+			needle[j] != '\0')
+				j++;
+			if (needle[j] == '\0')
 			{
-				i1++;
-				i2++;
+				haystack = &haystack[i];
+				return ((char*)haystack);
 			}
-			if (i2 == s2_len)
-				return ((char *)&s1[inicio_teste]);
 		}
-		inicio_teste++;
+		i++;
 	}
 	return (0);
 }

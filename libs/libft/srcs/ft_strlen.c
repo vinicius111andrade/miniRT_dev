@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/21 14:09:39 by vde-melo          #+#    #+#             */
-/*   Updated: 2020/11/10 18:32:38 by vde-melo         ###   ########.fr       */
+/*   Updated: 2020/11/27 21:14:45 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,10 @@
 
 size_t		ft_strlen(const char *str)
 {
-	size_t	len;
-	char	*str1;
+	size_t	n;
 
-	str1 = (char *)str;
-	len = 0;
-	while (*str1)
-	{
-		str1++;
-		len++;
-	}
-	return (len);
+	n = 0;
+	while (str[n] != '\0')
+		n++;
+	return (n);
 }

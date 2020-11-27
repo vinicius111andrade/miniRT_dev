@@ -6,7 +6,7 @@
 #    By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/20 13:48:55 by vde-melo          #+#    #+#              #
-#    Updated: 2020/11/10 18:35:50 by vde-melo         ###   ########.fr        #
+#    Updated: 2020/11/27 21:14:00 by vde-melo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,25 +45,23 @@ LIBFT = ft_atoi.c \
 	  ft_strtrim.c \
 	  ft_itoa.c \
 	  ft_strmapi.c \
-	  ft_split.c
-
-LIBFT_BONUS = ft_lstnew.c		\
-			ft_lstsize.c		\
-			ft_lstlast.c		\
-			ft_lstdelone.c		\
-			ft_lstadd_back.c	\
-			ft_lstadd_front.c	\
-			ft_lstclear.c		\
-			ft_lstmap.c			\
-			ft_lstiter.c		\
+	  ft_split.c \
+	  get_next_line.c \
+	  ft_lstnew.c \
+	  ft_lstsize.c \
+	  ft_lstlast.c \
+	  ft_lstdelone.c \
+	  ft_lstadd_back.c \
+	  ft_lstadd_front.c \
+	  ft_lstclear.c \
+	  ft_lstmap.c \
+	  ft_lstiter.c 
 
 SRCS_PATH = ./srcs/
 
 SRCS = $(addprefix $(SRCS_PATH), $(LIBFT))
-SRCS_BONUS = $(addprefix $(SRCS_PATH), $(LIBFT_BONUS))
 
 OBJS = ${LIBFT:.c=.o}
-OBJS_BONUS = ${LIBFT_BONUS:.c=.o}
 
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
@@ -72,11 +70,6 @@ INCLUDES = -I includes/
 $(NAME): $(SRC) includes/libft.h
 	${CC} ${CFLAGS} ${INCLUDES} -c $(SRCS)
 	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
-
-bonus:
-	${CC} ${CFLAGS} ${INCLUDES} -c $(SRCS) $(SRCS_BONUS)
-	ar rc $(NAME) $(OBJS) $(OBJS_BONUS)
 	ranlib $(NAME)
 
 all : $(NAME)
