@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 20:08:21 by vde-melo          #+#    #+#             */
-/*   Updated: 2020/11/26 17:01:27 by vde-melo         ###   ########.fr       */
+/*   Updated: 2020/11/27 16:26:56 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static double		fit_value(double value)
 		return (value);
 }
 
-t_colors		refit_colors(t_colors a)
+t_colors			refit_colors(t_colors a)
 {
 	t_colors	fit;
 
@@ -33,15 +33,18 @@ t_colors		refit_colors(t_colors a)
 	return (fit);
 }
 
-t_colors		final_colors(t_colors a)
+int					argb_to_int(t_colors a)
 {
-	t_colors	out;
 	t_colors	fit;
+	int			alpha;
+	int			red;
+	int			green;
+	int			blue;
 
 	fit = refit_colors(a);
-	out.a = fit.a * 255;
-	out.r = fit.r * 255;
-	out.g = fit.g * 255;
-	out.b = fit.b * 255;
-	return (out);
+	alpha = (int)(fit.a * 255);
+	red = (int)(fit.r * 255);
+	green = (int)(fit.g * 255);
+	blue = (int)(fit.b * 255);
+	return (alpha << 24 | red << 16 | green << 8 | blue);
 }
