@@ -18,5 +18,5 @@ Normalizes the colors dividing by 255 so that it's values range from 0 to 1 inst
 ### Refit Colors
 If an attribute has an value less than 0 it becomes 0 if is greater than 1 it becomes 1.
 
-### Final Colors
-First calls refit_colors to make sure the values are fit, then multiplies everything by 255.
+### ARGB to int
+First calls refit_colors to make sure the values are fit, then multiplies everything by 255. And at last use bitwise operators to return a int that has the ARGB info. An int has 4 bytes each component uses one byte, remember that one byte has 8 bits and with 8 bits you can write any number from 0 to 255.
