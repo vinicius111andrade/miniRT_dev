@@ -16,13 +16,13 @@ INCLUDES	= ./srcs
 SRCS_DIR	= ./srcs
 OBJS_DIR	= ./objs
 MLX_DIR		= ./libs/minilibx-linux
-VECTORS_DIR	= ./libs/vectors
 LIBFT_DIR	= ./libs/libft
 
-SRCS		= ${SRCS_DIR}/minirt.c
+SRCS		= ${SRCS_DIR}/main/minirt.c
 OBJS		= $(patsubst ${SRCS_DIR}/%.c, ${OBJS_DIR}/%.o, ${SRCS})
+HEADERS_DIR	= ${SRCS_DIR}/main ${SRCS_DIR}/colors ${SRCS_DIR}/tuples
 
-LIBS		= ${VECTORS_DIR}/libvectors.a -lm
+LIBS		= ${LIBFT_DIR}/libft.a -lm
 
 CC			=	clang
 
@@ -56,9 +56,6 @@ $(MLX):
 
 $(LIBFT):
 	$(MAKE) -C $(LIBFT_DIR)
-
-$(VECTOR):
-	$(MAKE) -C $(VECTORS_DIR)
 
 clean:
 			rm -rf ${OBJS}

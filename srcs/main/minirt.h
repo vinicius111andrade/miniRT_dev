@@ -16,8 +16,8 @@
 # include <math.h>
 # include "../libs/minilibx-linux/mlx.h"
 # include "../libs/minilibx-linux/mlx_int.h"
-# include "../libs/libft/includes/libft.h"
-# include "../libs/vectors/libvectors.h"
+# include "../colors/colors.h"
+# include "../tuples/tuples.h"
 
 int		minirt();
 
