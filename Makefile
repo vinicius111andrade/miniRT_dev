@@ -28,12 +28,13 @@ MLX			= $(MLX_DIR)/libmlx_Linux.a
 
 LIBS_DIRS	= $(LIBFT_DIR) $(MLX_DIR)
 LIBS_FLAGS	= -L ${LIBFT_DIR} -lft -lm
-MLX_FLAGS	= -L${MLX_DIR} -lbsd -lmlx_Linux -lXext -lX11
+MLX_FLAGS	= -L${MLX_DIR} -lmlx_Linux -lXext -lX11
 INCLUDES	= -I includes -I $(LIBFT_DIR)/includes/
 
 CC			= clang
 CC_FLAGS	= -Wall -Wextra -Werror -g3 -fsanitize=address
 
+NORM		= ~/.norminette/norminette.rb
 
 all:		$(NAME)
 
@@ -41,7 +42,7 @@ $(DIR_OBJS)/%.o :	$(DIR_SRCS)/%.c
 			@mkdir -p $(DIR_OBJS) $(OBJS_DIRS)
 			@$(CC) $(CC_FLAGS) $(INCLUDES) -c $< -o $@
 
-$(NAME):	$(OBJS) $(LIBFT)
+$(NAME):	$(OBJS) $(LIBFT) $(MLX)
 			@$(CC) $(CC_FLAGS) -o $(NAME) $(OBJS) $(MLX_FLAGS) $(LIB_FLAGS)
 
 
@@ -52,8 +53,6 @@ $(LIBFT):
 			$(MAKE) -C $(LIBFT_DIR)
 
 clean:
-			$(MAKE) -C $(MLX_DIR) -f Makefile.gen only_clean
-			$(MAKE) -C $(MLX_DIR)/test -f Makefile.gen only_clean
 			$(MAKE) -C $(LIBFT_DIR) clean
 			$(RM) -rf $(DIR_OBJS)
 
@@ -64,8 +63,18 @@ fclean:		clean
 
 re:			fclean all
 
-re_debug:
+fcleanLIBFT:
+			$(MAKE) -C $(LIBFT_DIR) fclean
+
+fcleanRT:
 			$(RM) -rf $(DIR_OBJS)
 			$(RM) $(NAME)
 
-PHONY:		all clean fclean re
+test:		all
+			./$(NAME)
+
+normLIBFT:
+			@$(NORM) $(LIBFT_DIR)
+
+normRT:
+			@$(NORM) $(SRCS) ./includes

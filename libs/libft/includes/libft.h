@@ -79,5 +79,10 @@ int					check_read(int reading, char **line, char **s, int fd);
 #endif
 
 #ifndef BUFFER_SIZE
-# define BUFFER_SIZE 42
+# define BUFFER_SIZE 128
+#endif
+
+#ifdef __linux__
+# define OPEN_MAX		1024
+# define ARG_MAX		2097152
 #endif

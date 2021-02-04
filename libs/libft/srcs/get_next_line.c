@@ -82,7 +82,7 @@ int		check_read(int reading, char **line, char **s, int fd)
 int		get_next_line(int fd, char **line)
 {
 	char		*buffer;
-	static char	*s[OPEN_MAX]; //procurar por FOPEN_MAX e _SC_OPEN_MAX, se pa usar essas no lugar
+	static char	*s[OPEN_MAX];
 	char		*aux;
 	int			reading;
 
