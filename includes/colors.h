@@ -26,7 +26,7 @@ t_colors		add_colors(t_colors a, t_colors b);
 t_colors		sub_colors(t_colors a, t_colors b);
 t_colors		scale_colors(double scalar, t_colors a);
 t_colors		norm_colors(t_colors a);
-t_colors		refit_colors(t_colors a);
+t_colors		fit_color(t_colors a);
 int				argb_to_int(t_colors a);
 t_colors		hadamard_product(t_colors a, t_colors b);
 

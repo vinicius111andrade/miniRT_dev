@@ -12,60 +12,49 @@
 
 NAME		=	miniRT_with_test
 
-INCLUDES	= ./srcs
-SRCS_DIR	= ./srcs
-OBJS_DIR	= ./objs
+DIR_SRCS	= ./srcs
+DIR_OBJS	= ./objs
+DIRS		= main colors tuples
+SRCS_DIRS	= $(foreach dir, $(DIRS), $(addprefix $(DIR_SRCS)/, $(dir)))
+OBJS_DIRS	= $(foreach dir, $(DIRS), $(addprefix $(DIR_OBJS)/, $(dir)))
+SRCS		= $(foreach dir, $(SRCS_DIRS), $(wildcard $(dir)/*.c))
+OBJS		= $(subst $(DIR_SRCS), $(DIR_OBJS), $(SRCS:.c=.o))
+
+LIBFT_DIR	= ./libs/libft/
+LIBFT		= $(LIBFT_DIR)libft.a
 MLX_DIR		= ./libs/minilibx-linux
-LIBFT_DIR	= ./libs/libft
 
-SRCS		= ${SRCS_DIR}/main/minirt.c
-OBJS		= $(patsubst ${SRCS_DIR}/%.c, ${OBJS_DIR}/%.o, ${SRCS})
-HEADERS_DIR	= ${SRCS_DIR}/main ${SRCS_DIR}/colors ${SRCS_DIR}/tuples
+LIBS_FLAGS	= -L ${LIBFT_DIR} -lft -lm
+MLX_FLAGS	= -L${MLX_DIR} -lbsd -lmlx_Linux -lXext -lX11
+INCLUDES	= -I includes -I $(LIBFT_DIR)/includes/
 
-LIBS		= ${LIBFT_DIR}/libft.a -lm
-
-CC			=	clang
-
-C_FLAGS		=	-c						\
-				-Wall					\
-				-Wextra					\
-				-Werror					\
-				-I${MLX_DIR}			\
-				-I${VECTORS_DIR}		\
-				-I${LIBFT_DIR}/includes	\
-				-I${INCLUDES}
-
-L_FLAGS		=	-L${MLX_DIR}			\
-				-lm						\
-				-lmlx_Linux				\
-				-lXext					\
-				-lX11
+CC			= clang
+CC_FLAGS	= -Wall -Wextra -Werror -g3 -fsanitize=address
 
 
-all: $(NAME)
+all:		$(NAME)
 
-$(NAME): ${OBJS}
-	$(CC) $^ $(L_FLAGS) -o $@
+$(DIR_OBJS)/%.o :	$(DIR_SRCS)/%.c
+			@mkdir -p $(DIR_OBJS) $(OBJS_DIRS)
+			@$(CC) $(CC_FLAGS) $(INCLUDES) -c $< -o $@
 
-$(OBJS_DIR)/%.o: $(SRCS_DIR)/%.c ${MLX} ${LIBFT} ${VECTORS}
-	mkdir -p $(OBJS_DIR)
-	$(CC) $(C_FLAGS) $< -o $@
+$(NAME):	$(OBJS) $(LIBFT)
+			@$(CC) $(CC_FLAGS) -o $(NAME) $(OBJS) $(MLX_FLAGS) $(LIB_FLAGS)
+
 
 $(MLX):
-	$(MAKE) -C $(MLX_DIR)
+			$(MAKE) -C $(MLX_DIR)
 
 $(LIBFT):
-	$(MAKE) -C $(LIBFT_DIR)
+			$(MAKE) -C $(LIBFT_DIR)
 
 clean:
 			rm -rf ${OBJS}
 			make clean -C ${LIBFT_DIR}
-			make clean -C ${VECTORS_DIR}
 
 fclean:		clean
 			rm -f ${NAME}
 			make fclean -C ${LIBFT_DIR}
-			make fclean -C ${VECTORS_DIR}
 
 re:			fclean all
 

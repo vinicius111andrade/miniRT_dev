@@ -10,19 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libcolors.h"
+#include "../../includes/colors.h"
 
 static double		fit_value(double value)
 {
-	if (value > 1)
-		return (1);
+	if (value > 255)
+		return (255);
 	else if (value < 0)
 		return (0);
 	else
 		return (value);
 }
 
-t_colors			refit_colors(t_colors a)
+t_colors			fit_color(t_colors a)
 {
 	t_colors	fit;
 
@@ -33,19 +33,17 @@ t_colors			refit_colors(t_colors a)
 	return (fit);
 }
 
-int					argb_to_int(t_colors a)
+int					argb_to_int(t_colors color)
 {
-	t_colors	fit;
 	int			alpha;
 	int			red;
 	int			green;
 	int			blue;
 
-	fit = refit_colors(a);
-	alpha = (int)(fit.a * 255);
-	red = (int)(fit.r * 255);
-	green = (int)(fit.g * 255);
-	blue = (int)(fit.b * 255);
+	alpha = (int)(color.a);
+	red = (int)(color.r);
+	green = (int)(color.g);
+	blue = (int)(color.b);
 	return (alpha << 24 | red << 16 | green << 8 | blue);
 }
 

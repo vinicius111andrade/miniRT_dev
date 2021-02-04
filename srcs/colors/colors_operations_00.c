@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libcolors.h"
+#include "../../includes/colors.h"
 
 t_colors		colors(double a, double r, double g, double b)
 {
