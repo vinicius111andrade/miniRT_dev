@@ -44,5 +44,8 @@ do_cp	:
 	cp $(NAME) libmlx_$(HT).a
 
 
-clean	:
-	rm -f $(OBJ) $(NAME) libmlx_$(HT).a *~ core *.core
+clean	:	only_clean
+	rm -f $(NAME) libmlx_$(HT).a *~ core *.core
+
+only_clean	:
+	rm -f $(OBJ)

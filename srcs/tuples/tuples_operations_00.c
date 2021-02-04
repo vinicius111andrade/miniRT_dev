@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libtuples.h"
+#include "../../includes/tuples.h"
 
 t_tuples		point(double x, double y, double z)
 {

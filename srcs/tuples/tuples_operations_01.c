@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libtuples.h"
+#include "../../includes/tuples.h"
 
 t_tuples		scale_tuples(double scalar, t_tuples a)
 {
@@ -43,6 +43,7 @@ t_tuples		normalize(t_tuples v)
 	unit.y = v.y / mag;
 	unit.z = v.z / mag;
 	unit.w = v.w;
+	return unit;
 }
 
 t_tuples		crossproduct(t_tuples a, t_tuples b)

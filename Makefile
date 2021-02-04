@@ -22,8 +22,11 @@ OBJS		= $(subst $(DIR_SRCS), $(DIR_OBJS), $(SRCS:.c=.o))
 
 LIBFT_DIR	= ./libs/libft/
 LIBFT		= $(LIBFT_DIR)libft.a
-MLX_DIR		= ./libs/minilibx-linux
 
+MLX_DIR		= ./libs/minilibx-linux
+MLX			= $(MLX_DIR)/libmlx_Linux.a
+
+LIBS_DIRS	= $(LIBFT_DIR) $(MLX_DIR)
 LIBS_FLAGS	= -L ${LIBFT_DIR} -lft -lm
 MLX_FLAGS	= -L${MLX_DIR} -lbsd -lmlx_Linux -lXext -lX11
 INCLUDES	= -I includes -I $(LIBFT_DIR)/includes/
@@ -49,13 +52,20 @@ $(LIBFT):
 			$(MAKE) -C $(LIBFT_DIR)
 
 clean:
-			rm -rf ${OBJS}
-			make clean -C ${LIBFT_DIR}
+			$(MAKE) -C $(MLX_DIR) -f Makefile.gen only_clean
+			$(MAKE) -C $(MLX_DIR)/test -f Makefile.gen only_clean
+			$(MAKE) -C $(LIBFT_DIR) clean
+			$(RM) -rf $(DIR_OBJS)
 
 fclean:		clean
-			rm -f ${NAME}
-			make fclean -C ${LIBFT_DIR}
+			$(MAKE) -C $(MLX_DIR) clean
+			$(MAKE) -C $(LIBFT_DIR) fclean
+			$(RM) $(NAME)
 
 re:			fclean all
+
+re_debug:
+			$(RM) -rf $(DIR_OBJS)
+			$(RM) $(NAME)
 
 PHONY:		all clean fclean re
