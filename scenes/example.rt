@@ -1,3 +1,9 @@
+### .rt Rules
+##		Every line to be read must start with a identifier
+##		Identifiers with capitalized letters must appear only once per file
+##		The information must follow a strict order
+##		Commentaries in this file start with ##
+
 ### Definitions
 ##		Width x and heigth y can be any positive number (0 is not positive).
 ##		Unit vector, lenght == 1, x, y, z in range[-1.0,1.0]. Used to tell direction, to define a normal vector.
