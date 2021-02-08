@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 18:08:04 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/05 21:07:40 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/08 19:18:07 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int		main(int argc, char *argv[])
 
 
 	if (argc < 2)
-		fatal_error_msg("fatal working");
+		error_msg("000");
 	else if (argc == 2)
 		error_msg("001");
 	else if (argc > 3)

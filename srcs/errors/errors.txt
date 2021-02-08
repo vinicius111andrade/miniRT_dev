@@ -1,5 +1,8 @@
-# Lista de erros com IDs #
+# Erros base (000 a 009)
 
-000 comeco do mundo
-001 primeira msg
-002 segunda msg
+000 Errou grandao meu parcero.
+
+
+# Erros de argc e argv (010 a ?)
+
+010
