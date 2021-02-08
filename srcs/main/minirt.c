@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 18:08:04 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/08 20:02:48 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/08 21:05:10 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,8 @@ int		main(int argc, char *argv[])
 		fatal_error_msg("013");
 	if (argc == 3)
 		msg("014");
-	msg("011");
+	else
+		msg("011");
 	// mlx = mlx_init();
 	// win1 = mlx_new_window(mlx, WIN1_SX, WIN1_SY, "Minha janelinha top");
 	// mlx_pixel_put(mlx, win1, 10, 10, 0066660000);

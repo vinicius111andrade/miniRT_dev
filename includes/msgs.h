@@ -6,12 +6,12 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 19:57:42 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/08 20:00:27 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/08 22:03:46 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ERRORS_H
-# define ERRORS_H
+#ifndef MSGS_H
+# define MSGS_H
 
 # include "libft.h"
 # include <fcntl.h>

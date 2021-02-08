@@ -1,6 +1,7 @@
-# Erros base (000 a 009)
+# Erros base (000 a 009 e 666)
 
 000 Errou grandao meu parcero.
+666 Jaque Patomba nao gostou disso que voce fez. O Brasil ta vendo!
 001 Could not read errors.txt
 
 

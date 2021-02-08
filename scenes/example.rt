@@ -1,0 +1,52 @@
+### Definitions
+##		Width x and heigth y can be any positive number (0 is not positive).
+##		Unit vector, lenght == 1, x, y, z in range[-1.0,1.0]. Used to tell direction, to define a normal vector.
+##		Brigtness, is a ratio and it's range is [0.0,1.0].
+##		Color is in RGB format with range[0,255].
+##		Origin is a point.
+##		FOV is field-of-view and is in degrees with range[0,180].
+##		Diameter is a positive number.
+##		Side size is a positive number.
+##		Cylinder height is a positive number.
+
+
+### RESOLUTION
+## width x   height y
+R  800       600
+# R  80        60
+# R  2         2
+
+### AMBIENT LIGHTING
+## brightness   color
+A  0.5          255,255,255
+
+### CAMERAS
+## origin           unit vector       FOV
+c  +0.0,+2.0,+4.0   +0.0,-0.25,-1.0   100
+
+### LIGHTING
+## origin           brightness   color
+l  +0.0,+4.0,+3.0   0.1          255,255,255
+
+### PLANE
+## origin           unit vector      color
+pl +0.0,+0.0,+0.0   +0.0,+1.0,+0.0   140,118,206
+# pl +0.0,+5.0,+0.0   +0.0,+1.0,+0.0   0,0,255
+
+### SPHERE
+## origin           diameter           color
+sp +0.0,+1.0,+0.0   2.0            216,56,136
+
+### SQUARE
+## origin           unit vector      side size   color
+sq -2.0,+1.0,-1.0   +1.0,+0.0,+0.0   4.0         0,176,240
+sq +0.0,+3.0,-1.0   +0.0,+1.0,+0.0   4.0         0,176,240
+sq +2.0,+1.0,-1.0   +1.0,+0.0,+0.0   4.0         0,176,240
+
+### CYLINDER
+## origin           unit vector      diameter   cylinder height   color
+cy -2.2,+0.0,+1.2   +0.0,+1.0,+0.0   0.2        3.0               255,204,0
+
+### TRIANGLE
+## first point      second point     third point      color
+tr -2.0,+0.2,+1.0   +2.0,+0.2,+1.0   +0.0,+0.1,-4.0   68,194,164
