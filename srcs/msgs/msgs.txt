@@ -1,0 +1,13 @@
+# Erros base (000 a 009)
+
+000 Errou grandao meu parcero.
+001 Could not read errors.txt
+
+
+# Erros de argc e argv (010 a ?)
+
+010 - FATAL - I need arguments. Give me at least a .rt file. And a --save option if you want me to save the render.
+011 - Nice, but i wont save.
+012 - FATAL - Whoaa, too many arguments!
+013 - FATAL - I don't understand the second argument. --save is the only available option.
+014 - Nice, will save for you.

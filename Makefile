@@ -6,7 +6,7 @@
 #    By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/07 17:23:51 by vde-melo          #+#    #+#              #
-#    Updated: 2021/02/05 20:19:27 by vde-melo         ###   ########.fr        #
+#    Updated: 2021/02/08 20:06:30 by vde-melo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME			= minirt_dev
 
 DIR_SRCS		= ./srcs
 DIR_OBJS		= ./objs
-SUBDIRS			= colors tuples errors main
+SUBDIRS			= colors tuples msgs main
 
 SUBDIRS_SRCS	= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_SRCS)/, $(dir)))
 SUBDIRS_OBJS	= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_OBJS)/, $(dir)))

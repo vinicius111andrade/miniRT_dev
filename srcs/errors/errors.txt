@@ -1,8 +1,0 @@
-# Erros base (000 a 009)
-
-000 Errou grandao meu parcero.
-
-
-# Erros de argc e argv (010 a ?)
-
-010
