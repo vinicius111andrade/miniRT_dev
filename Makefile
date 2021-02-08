@@ -6,11 +6,11 @@
 #    By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/07 17:23:51 by vde-melo          #+#    #+#              #
-#    Updated: 2021/02/08 20:06:30 by vde-melo         ###   ########.fr        #
+#    Updated: 2021/02/08 23:18:17 by vde-melo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-#name all source files
+#name all source files including .h
 
 NAME			= minirt_dev
 
