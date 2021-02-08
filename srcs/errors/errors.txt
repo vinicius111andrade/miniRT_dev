@@ -1,0 +1,5 @@
+# Lista de erros com IDs #
+
+000 comeco do mundo
+001 primeira msg
+002 segunda msg

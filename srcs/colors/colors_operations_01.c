@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   colors_operations_01.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 20:08:21 by vde-melo          #+#    #+#             */
-/*   Updated: 2020/11/27 18:17:07 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/05 20:22:23 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/colors.h"
+#include "colors.h"
 
 static double		fit_value(double value)
 {

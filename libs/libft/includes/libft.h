@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/20 13:28:51 by vde-melo          #+#    #+#             */
-/*   Updated: 2020/11/27 21:09:39 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/08 18:50:44 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,6 @@ t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 int					get_next_line(int fd, char **line);
 char				*gnl_calloc(size_t count, size_t size);
 void				ft_delstr(char **c);
-
 int					copy_line(char **line, char **s, int fd);
 int					check_read(int reading, char **line, char **s, int fd);
 

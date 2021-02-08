@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   colors_operations_00.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/20 22:17:07 by vde-melo          #+#    #+#             */
-/*   Updated: 2020/11/27 17:22:02 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/05 20:22:21 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/colors.h"
+#include "colors.h"
 
 t_colors		colors(double a, double r, double g, double b)
 {
