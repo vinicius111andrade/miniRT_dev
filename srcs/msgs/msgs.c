@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 19:57:50 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/08 20:09:19 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/08 20:11:14 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void		msg(char *id)
 	int		fd;
 	char	*msg;
 
-	if ((fd = open("srcs/errors/errors.txt", O_RDONLY)) < 0)
+	if ((fd = open("srcs/msgs/msgs.txt", O_RDONLY)) < 0)
 		fatal_error_msg("could not read txt");
 	while (get_next_line(fd, &msg) == 1)
 	{
