@@ -2,7 +2,7 @@
 
 000 Errou grandao meu parcero.
 666 Jaque Patomba nao gostou disso que voce fez. O Brasil ta vendo!
-001 Could not read errors.txt
+001 FATAL - Could not read msgs.txt
 
 
 # Erros de argc e argv (010 a ?)
@@ -12,3 +12,17 @@
 012 - FATAL - Whoaa, too many arguments!
 013 - FATAL - I don't understand the second argument. --save is the only available option.
 014 - Nice, will save for you.
+015 - FATAL - The first argument given to me must be a file with the .rt extension.
+016 - FATAL - Found weird stuff in your .rt check the file please. Only lines starting with identifiers and # are allowed. Use # for comments.
+
+# Achei objeto (990 a 998)
+
+990 - Achei R de Resolution
+991 - Achei A de Ambient light
+992 - Achei c de Camera
+993 - Achei l de Light
+994 - Achei sp de Sphere
+995 - Achei pl de Plane
+996 - Achei sq de Square
+997 - Achei cy de Cylinder
+998 - Achei tr de Triangle

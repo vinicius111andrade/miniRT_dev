@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 22:43:19 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/08 23:17:50 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/09 19:10:43 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,6 @@
 # define SCENE_H
 
 # include "minirt.h"
-
-/*
-** Scene definition
-*/
-typedef struct		s_scene
-{
-	t_res			res;
-	t_amb_light		amb_light;
-	t_cam			*cam;
-	t_light			*light;
-	t_pl			*pl;
-	t_sp			*sp;
-	t_sq			*sq;
-	t_cy			*cy;
-	t_tr			*tr;
-}					t_scene;
 
 /*
 ** Scene elements defined in .rt
@@ -105,5 +89,22 @@ typedef struct		s_tr
 	t_colors		color;
 	struct s_tr		*next;
 }					t_tr;
+
+/*
+** Scene definition
+*/
+typedef struct		s_scene
+{
+	char			*line;
+	t_res			res;
+	t_amb_light		amb_light;
+	t_cam			*cam;
+	t_light			*light;
+	t_pl			*pl;
+	t_sp			*sp;
+	t_sq			*sq;
+	t_cy			*cy;
+	t_tr			*tr;
+}					t_scene;
 
 #endif

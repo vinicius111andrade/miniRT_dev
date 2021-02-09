@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 18:08:04 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/08 23:26:46 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/09 19:36:17 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,8 @@ int		main(int argc, char *argv[])
 		fatal_error_msg("012");
 	else if (argc == 3 && ft_strncmp(argv[2], "--save", 7) != 0)
 		fatal_error_msg("013");
-	rt.save = (argc == 3);
-	parse_scene(argv[1], &rt.scene);
+	rt.save = (argc == 3); //ver se esta funcioando, save eh type int
+	parse_file(argv[1], &rt.scene);
 	// mlx = mlx_init();
 	// win1 = mlx_new_window(mlx, WIN1_SX, WIN1_SY, "Minha janelinha top");
 	// mlx_pixel_put(mlx, win1, 10, 10, 0066660000);
