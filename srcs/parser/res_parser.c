@@ -6,9 +6,11 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 21:24:56 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/09 21:31:31 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/11 21:35:16 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "parser.h"
 
 /*
 ** tem q achar apenas dois numeros inteiros maiores q zero na str
@@ -22,5 +24,42 @@
 **
 ** usar split??
 **
-** checa se os valores passados sao validos, se n forem FATAL ERROR NELES
+** checa se os valores passados sao validos, se n forem: FATAL ERROR NELES
+**
+** malloc no scene->line, scene->snippets, no scene->res
 */
+
+static void	validate_res(char **snippets)
+{
+	int		i;
+
+	i = 1;
+	while (i < 3)
+	{
+		if (is_number(snippets[i]) == 0 || is_int(snippets[i]) == 0)
+			fatal_error_msg("024");
+		i++;
+	}
+}
+
+void		parse_res(t_scene *scene)
+{
+	char	**snippets;
+	t_res	*res;
+
+	if (scene->has_res == 1)
+		fatal_error_msg("025");
+	validate_line_chars(scene->line);
+	snippets = ft_split(scene->line, ' ');
+	if (count_snippets(snippets) != 3)
+		fatal_error_msg("022");
+	validate_res(snippets);
+	res = malloc(sizeof(t_res));
+	res->x = str_to_double(snippets[1]);
+	res->y = str_to_double(snippets[2]);
+	if (res->x < 1 || res->y < 1)
+		fatal_error_msg("026");
+	scene->res = res;
+	scene->has_res = 1;
+	free_snippets(snippets, 3);
+}

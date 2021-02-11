@@ -5,7 +5,7 @@
 001 FATAL - Could not read msgs.txt
 
 
-# Erros de argc e argv (010 a ?)
+# Erros de argc e argv (010 a 019)
 
 010 - FATAL - I need arguments. Give me at least a .rt file. And a --save option if you want me to save the render.
 011 - Nice, but i wont save.
@@ -13,7 +13,15 @@
 013 - FATAL - I don't understand the second argument. --save is the only available option.
 014 - Nice, will save for you.
 015 - FATAL - The first argument given to me must be a file with the .rt extension.
-016 - FATAL - Found weird stuff in your .rt check the file please. Only lines starting with identifiers and # are allowed. Use # for comments.
+
+# Erros no .rt (020 a ?)
+020 - FATAL - Found an invalid char in your .rt, check the file please. Only lines starting with identifiers and # are allowed. Use # for comments.
+021 - FATAL - Found an invalid char in your .rt, check the file please. Every non comment line must have only the info asked sepparated by spaces.
+022 - FATAL - In your .rt file the R line has the wrong number of arguments, check documentation.
+023 - FATAL - Your .rt lacks information needed to render anyting. MUST have resolution, ambient light and one camera.
+024 - FATAL - The resolution given in the .rt is invalid, check it please.
+025 - FATAL - Resolution has been given more than once.
+026 - FATAL - Resolution must be greater than zero.
 
 # Achei objeto (990 a 998)
 

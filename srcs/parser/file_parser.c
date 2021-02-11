@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:28:48 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/09 21:23:12 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/11 21:36:38 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	parse_file(char *file, t_scene *scene)
 								"sp", "pl", "sq", "cy", "tr", "##", "# "};
 	int				id_nb;
 	int				fd;
+	t_res			*res;
 
 	if (reversed_strncmp(file, ".rt", 3) != 0)
 		fatal_error_msg("015");
@@ -36,12 +37,14 @@ void	parse_file(char *file, t_scene *scene)
 		while (id_nb < 11 && ft_strncmp(scene->line, id[id_nb], 2))
 			id_nb++;
 		if (id_nb == 11 && ft_strncmp(scene->line, "\0", 1))
-			free(scene->line);
-		if (id_nb == 11 && ft_strncmp(scene->line, "\0", 1))
-			fatal_error_msg("016");
+			fatal_error_msg("020");
 		if (id_nb < 9)
 			parse_line(id_nb, scene);
 		free(scene->line);
 	}
 	close(fd);
+	res = scene->res;
+	printf("resolution x = %f, y = = %f", res->x, res->y); //printf
+	if (scene->has_res == 0 || scene->has_ambl == 0 || scene->has_cam == 0)
+		fatal_error_msg("023");
 }
