@@ -22,6 +22,12 @@
 024 - FATAL - The resolution given in the .rt is invalid, check it please.
 025 - FATAL - Resolution has been given more than once.
 026 - FATAL - Resolution must be greater than zero.
+027 - FATAL - Ambient light ratio is not well formatted.
+028 - FATAL - Ambient light has been given more than once.
+029 - FATAL - Ambient light has the wrong number of arguments.
+030 - FATAL - Ambient light has a weird RGB number.
+031 - FATAL - Ambient light RGB argument has wrong number of values.
+032 - FATAL - Ambient light has a negative RGB number.
 
 # Achei objeto (990 a 998)
 

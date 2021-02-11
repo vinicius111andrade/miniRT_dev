@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:42:37 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/11 21:33:56 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/11 22:53:52 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,4 +197,24 @@ void		free_snippets(char **snippets, int nb)
 		i++;
 	}
 	free(snippets);
+}
+
+int			nonnegative_str_nb(char *str)
+{
+	if (str[0] == '-')
+		return (0);
+	return (1);
+}
+
+int			is_ratio(double n)
+{
+	if (n >= 0.0 && n <= 1.0)
+		return (1);
+	else
+		return (0);
+}
+
+void		get_rgb(char **rgb, t_colors *color)
+{
+
 }

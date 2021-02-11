@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:34:05 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/11 21:15:55 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/11 22:38:46 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,7 @@ void	parse_file(char *file, t_scene *scene);
 void	parse_line(int id_nb, t_scene *scene);
 void	parse_res(t_scene *scene);
 void	free_snippets(char **snippets, int nb);
+void	parse_amb_light(t_scene *scene);
+int		nonnegative_str_nb(char *str);
 
 #endif
