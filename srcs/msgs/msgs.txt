@@ -28,6 +28,8 @@
 030 - FATAL - Ambient light has a weird RGB number.
 031 - FATAL - Ambient light RGB argument has wrong number of values.
 032 - FATAL - Ambient light has a negative RGB number.
+033 - FATAL - Ambient light has an out of bounds RGB number. Must be 0 <= n <= 255.
+034 - FATAL - Ambient light brightness is not a proper ratio. Must be 0 <= n <= 1.
 
 # Achei objeto (990 a 998)
 

@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:42:37 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/11 22:53:52 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/12 12:14:05 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,5 +216,21 @@ int			is_ratio(double n)
 
 void		get_rgb(char **rgb, t_colors *color)
 {
+	color->a = 255;
+	color->r = str_to_double(rgb[0]);
+	color->b = str_to_double(rgb[1]);
+	color->g = str_to_double(rgb[2]);
+}
 
+int			validate_rgb_bounds(t_colors color)
+{
+	if (color.a < 0 || color.a > 255)
+		return (0);
+	else if (color.r < 0 || color.r > 255)
+		return (0);
+	else if (color.g < 0 || color.g > 255)
+		return (0);
+	else if (color.b < 0 || color.b > 255)
+		return (0);
+	return (1);
 }

@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 19:37:01 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/11 22:44:52 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/12 12:18:25 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,4 @@ void	parse_line(int id_nb, t_scene *scene)
 		msg("997");
 	else if (id_nb == 8)
 		msg("998");
-	free(scene->line);
 }

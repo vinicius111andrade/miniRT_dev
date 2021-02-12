@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:34:05 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/11 22:38:46 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/12 12:17:14 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,8 @@ void	parse_res(t_scene *scene);
 void	free_snippets(char **snippets, int nb);
 void	parse_amb_light(t_scene *scene);
 int		nonnegative_str_nb(char *str);
+int		is_ratio(double n);
+void	get_rgb(char **rgb, t_colors *color);
+int		validate_rgb_bounds(t_colors color);
 
 #endif

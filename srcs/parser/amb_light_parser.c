@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 21:40:34 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/11 22:59:38 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/12 14:34:26 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 ** checar se eh num e se eh ratio
 ** checar se RGB eh positivo
 */
+
 static void	validate_amb_light(char **snippets, char **rgb)
 {
 	int			i;
@@ -27,8 +28,9 @@ static void	validate_amb_light(char **snippets, char **rgb)
 	{
 		if (is_number(rgb[i]) == 0 || is_int(rgb[i]) == 0)
 			fatal_error_msg("030");
-		else if (nonnegative_str_nb(rgb[i]) == 0 )
+		else if (nonnegative_str_nb(rgb[i]) == 0)
 			fatal_error_msg("032");
+		i++;
 	}
 }
 
@@ -45,7 +47,7 @@ void		parse_amb_light(t_scene *scene)
 	char		**snippets;
 	char		**rgb;
 	t_amb_light	*amb_light;
-	t_colors	*color;
+	t_colors	color;
 
 	if (scene->has_ambl == 1)
 		fatal_error_msg("028");
@@ -54,11 +56,14 @@ void		parse_amb_light(t_scene *scene)
 	rgb = ft_split(snippets[2], ',');
 	check_arg_nb(snippets, rgb);
 	validate_amb_light(snippets, rgb);
-	color = malloc(sizeof(t_colors));
-	get_rgb(rgb, color);
+	get_rgb(rgb, &color);
+	if (validate_rgb_bounds(color) == 0)
+		fatal_error_msg("033");
 	amb_light = malloc(sizeof(t_amb_light));
 	amb_light->brightness = str_to_double(snippets[1]);
-
+	if (is_ratio(amb_light->brightness) == 0)
+		fatal_error_msg("034");
+	amb_light->color = color;
 	scene->amb_light = amb_light;
 	scene->has_ambl = 1;
 	free_snippets(rgb, 3);
