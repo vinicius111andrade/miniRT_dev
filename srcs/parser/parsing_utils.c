@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:42:37 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/12 12:14:05 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/12 15:47:05 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -233,4 +233,19 @@ int			validate_rgb_bounds(t_colors color)
 	else if (color.b < 0 || color.b > 255)
 		return (0);
 	return (1);
+}
+
+t_tuples	str_to_tuple(char **xyz, int is_point)
+{
+	double	x;
+	double	y;
+	double	z;
+
+	x = str_to_double(xyz[0]);
+	y = str_to_double(xyz[1]);
+	z = str_to_double(xyz[2]);
+	if (is_point)
+		return point(x, y, z);
+	else
+		return vector(x, y, z);
 }

@@ -30,6 +30,9 @@
 032 - FATAL - Ambient light has a negative RGB number.
 033 - FATAL - Ambient light has an out of bounds RGB number. Must be 0 <= n <= 255.
 034 - FATAL - Ambient light brightness is not a proper ratio. Must be 0 <= n <= 1.
+035 - FATAL - Camera has the wrong number of arguments.
+036 - FATAL - Camera has weird FOV value.
+037 - FATAL - Camera coordinate with wrong number of values. Must be 3, xyz.
 
 # Achei objeto (990 a 998)
 
