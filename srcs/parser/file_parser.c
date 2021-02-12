@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:28:48 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/12 12:13:11 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/12 17:59:39 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	parse_file(char *file, t_scene *scene)
 	t_res			*res;
 	t_amb_light		*amb_light;
 	t_colors		color;
+	t_cam			*cam;
+	t_tuples		tuple;
 
 	if (reversed_strncmp(file, ".rt", 3) != 0)
 		fatal_error_msg("015");
@@ -48,6 +50,8 @@ void	parse_file(char *file, t_scene *scene)
 	res = scene->res; //pra debugar
 	amb_light = scene->amb_light;
 	color = amb_light->color;
+	cam = scene->cam;
+	
 	printf("resolution x = %f, y = = %f\n", res->x, res->y); //printf
 	printf("amb light brigth = %f, r = %f, g = %f, b = %f\n", amb_light->brightness, color.r, color.g, color.b);
 	if (scene->has_res == 0 || scene->has_ambl == 0 || scene->has_cam == 0)

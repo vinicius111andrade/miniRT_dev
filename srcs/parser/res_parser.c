@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 21:24:56 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/11 21:35:16 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/12 18:11:24 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void		parse_res(t_scene *scene)
 	if (count_snippets(snippets) != 3)
 		fatal_error_msg("022");
 	validate_res(snippets);
-	res = malloc(sizeof(t_res));
+	res = init_res();
 	res->x = str_to_double(snippets[1]);
 	res->y = str_to_double(snippets[2]);
 	if (res->x < 1 || res->y < 1)

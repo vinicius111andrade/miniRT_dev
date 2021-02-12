@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 14:37:35 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/12 15:52:20 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/12 18:13:03 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,9 +53,14 @@ static t_tuples	get_and_check_xyz(char *coord, int is_point)
 	return tuple;
 }
 
-static void	check_coord(t_tuples direction)
+static void	validate_direction(t_tuples direction)
 {
-
+	if (direction.x < -1.0 || direction.x > 1.0)
+		fatal_error_msg("039");
+	else if (direction.y < -1.0 || direction.y > 1.0)
+		fatal_error_msg("039");
+	else if (direction.z < -1.0 || direction.z > 1.0)
+		fatal_error_msg("039");
 }
 
 void		parse_cam(t_scene *scene)
@@ -69,17 +74,16 @@ void		parse_cam(t_scene *scene)
 	snippets = ft_split(scene->line, ' ');
 	check_arg_nb(snippets);
 	validate_fov(snippets);
-	cam = malloc(sizeof(t_cam)); //checar se o valor de origem e direcao sao corretos
+	cam = init_cam();
 	tuple = get_and_check_xyz(snippets[1], 1);
 	cam->origin = tuple;
 	tuple = get_and_check_xyz(snippets[2], 0);
 	cam->direction = tuple;
-
+	validate_direction(cam->direction);
 	cam->fov = str_to_double(snippets[3]);
 	if (validate_fov_bounds(cam->fov) == 0)
 		fatal_error_msg("033");
-
-	scene->cam = cam;
+	link_cam(scene, cam);
 	scene->has_cam = 1;
 	free_snippets(snippets, 3);
 }

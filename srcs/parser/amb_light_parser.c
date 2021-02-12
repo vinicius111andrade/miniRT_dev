@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 21:40:34 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/12 14:34:26 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/12 18:11:04 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void		parse_amb_light(t_scene *scene)
 	get_rgb(rgb, &color);
 	if (validate_rgb_bounds(color) == 0)
 		fatal_error_msg("033");
-	amb_light = malloc(sizeof(t_amb_light));
+	amb_light = init_amb_light();
 	amb_light->brightness = str_to_double(snippets[1]);
 	if (is_ratio(amb_light->brightness) == 0)
 		fatal_error_msg("034");

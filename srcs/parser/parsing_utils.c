@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:42:37 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/12 15:47:05 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/12 17:55:46 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,10 +63,6 @@ int			count_snippets(char **line_snippets)
 	return (nb);
 }
 
-/*
-** Recebe uma str qlqr e checa se eh do tipo 3452.23
-** Se nao for assim ela retorna 0.
-*/
 static int	only_nb_chars(char *str)
 {
 	int		i;
@@ -101,9 +97,6 @@ int			is_int(char *str)
 	return (1);
 }
 
-/*
-** Se receber algo como 3452.23.234 retorna 0
-*/
 static int	only_one_decimal_sep(char *str)
 {
 	int		i;
@@ -151,9 +144,6 @@ int		is_number(char *str)
 		return (1);
 }
 
-/*
-** N sei se estah funcionando
-*/
 double	str_to_double(char *str)
 {
 	double	sign;

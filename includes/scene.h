@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 22:43:19 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/11 21:38:12 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/12 18:15:46 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,5 +109,16 @@ typedef struct		s_scene
 	t_cy			*cy;
 	t_tr			*tr;
 }					t_scene;
+
+t_res				*init_res(void);
+t_amb_light			*init_amb_light(void);
+t_cam				*init_cam(void);
+t_light				*init_light(void);
+t_pl				*init_pl(void);
+t_sp				*init_sp(void);
+t_sq				*init_sq(void);
+t_cy				*init_cy(void);
+t_tr				*init_tr(void);
+void				link_cam(t_scene *scene, t_cam *new_cam);
 
 #endif
