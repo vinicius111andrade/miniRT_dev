@@ -6,7 +6,7 @@
 #    By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/07 17:23:51 by vde-melo          #+#    #+#              #
-#    Updated: 2021/02/12 18:51:39 by vde-melo         ###   ########.fr        #
+#    Updated: 2021/02/12 20:55:06 by vde-melo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ NAME			= minirt_dev
 
 DIR_SRCS		= ./srcs
 DIR_OBJS		= ./objs
-SUBDIRS			= colors tuples msgs scene parser tests main
+DIR_INCLUDES	= ./includes
+SUBDIRS			= colors tuples msgs scene tests parser main
 
 SUBDIRS_SRCS	= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_SRCS)/, $(dir)))
 SUBDIRS_OBJS	= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_OBJS)/, $(dir)))
@@ -32,9 +33,9 @@ MLX				= $(MLX_DIR)/libmlx_Linux.a
 
 SUBDIRS_LIBS	= $(LIBFT_DIR) $(MLX_DIR)
 
-FLAGS_LIBS		= -L ${LIBFT_DIR} -lft -lm
+FLAGS_LIBS		= -L ${LIBFT_DIR} -lft -lm -L$(DIR_INCLUDES)
 FLAGS_MLX		= -L ${MLX_DIR} -lmlx_Linux -lXext -lX11
-INCLUDES		= -I includes -I $(LIBFT_DIR)/includes/
+INCLUDES		= -I $(DIR_INCLUDES) -I $(LIBFT_DIR)/includes/
 
 CC				= clang
 FLAGS_CC		= -Wall -Wextra -Werror -g3 -fsanitize=address

@@ -6,13 +6,14 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:34:05 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/12 15:42:45 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/12 20:52:46 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PARSER_H
 # define PARSER_H
 
+# include "scene.h"
 # include "minirt.h"
 # include <fcntl.h>
 

@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 17:47:49 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/12 18:27:17 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/12 20:26:56 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 /*
 ** Headers
 */
-# include "tests.h" //tirar depois
+# include "scene.h"
 # include <math.h>
 # include <unistd.h>
 # include <stdlib.h>
@@ -26,8 +26,8 @@
 # include "colors.h"
 # include "tuples.h"
 # include "msgs.h"
-# include "scene.h"
 # include "parser.h"
+# include "tests.h" //tirar depois
 
 /*
 ** Structs

@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:28:48 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/12 18:26:29 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/12 22:46:34 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	parse_file(char *file, t_scene *scene)
 		fatal_error_msg("015");
 	if ((fd = open(file, O_RDONLY)) < 0)
 		fatal_error_msg("001");
-	*scene = (t_scene) {0};
+	ft_bzero(scene, sizeof(t_scene));
 	while (get_next_line(fd, &scene->line) == 1)
 	{
 		id_nb = 0;

@@ -6,12 +6,11 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 18:19:57 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/12 18:50:56 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/12 20:17:54 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../includes/tests.h"
-#include "../../includes/scene.h"
+#include "tests.h"
 
 void	test_parsing(t_scene *scene)
 {
