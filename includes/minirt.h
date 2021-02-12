@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 17:47:49 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/09 19:05:56 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/12 18:27:17 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 /*
 ** Headers
 */
+# include "tests.h" //tirar depois
 # include <math.h>
 # include <unistd.h>
 # include <stdlib.h>

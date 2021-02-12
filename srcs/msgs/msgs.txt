@@ -35,6 +35,7 @@
 037 - FATAL - Camera coordinate with wrong number of values. Must be 3, xyz.
 038 - FATAL - Camera coordinate with weird value.
 039 - FATAL - Camera direction vector has at least one value outside the interval [-1,1].
+040 - FATAL - Camera FOV is out of bounds, it must be between 0 and 180.
 
 # Achei objeto (990 a 998)
 

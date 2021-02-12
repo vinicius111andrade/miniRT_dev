@@ -6,17 +6,18 @@
 #    By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/07 17:23:51 by vde-melo          #+#    #+#              #
-#    Updated: 2021/02/09 18:54:33 by vde-melo         ###   ########.fr        #
+#    Updated: 2021/02/12 18:51:39 by vde-melo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #name all source files including .h
+#get tests out of the srcs folder and out of the SUBDIRS list
 
 NAME			= minirt_dev
 
 DIR_SRCS		= ./srcs
 DIR_OBJS		= ./objs
-SUBDIRS			= colors tuples msgs parser main
+SUBDIRS			= colors tuples msgs scene parser tests main
 
 SUBDIRS_SRCS	= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_SRCS)/, $(dir)))
 SUBDIRS_OBJS	= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_OBJS)/, $(dir)))
