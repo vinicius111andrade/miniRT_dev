@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 18:19:57 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 21:12:59 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 21:39:05 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	test_parsing(t_scene *scene)
 	test_light_parsing(scene);
 	test_plane_parsing(scene);
 	test_sphere_parsing(scene);
+	test_square_parsing(scene);
 }
 
 void	test_cam_parsing(t_scene *scene)
@@ -134,5 +135,35 @@ void	test_sphere_parsing(t_scene *scene)
 
 		sphere_nb++;
 		sphere = sphere->next;
+	}
+}
+
+void	test_square_parsing(t_scene *scene)
+{
+	t_sq			*square;
+	t_tuples		origin;
+	t_tuples		normal;
+	double			side;
+	t_colors		color;
+	int				square_nb;
+
+	square = scene->sq;
+	square_nb = 1;
+	printf("\n\nTESTING SPHERES\n");
+	while (square != NULL)
+	{
+		origin = square->origin;
+		normal = square->normal;
+		side = square ->side;
+		color = square->color;
+
+		printf("\nSquare Number %d\n", square_nb);
+		printf("Square Origin: x = %f, y = %f, z = %f\n", origin.x, origin.y, origin.z);
+		printf("Square Normal: x = %f, y = %f, z = %f\n", normal.x, normal.y, normal.z);
+		printf("Square Side: %f\n", side);
+		printf("Square Color r = %f, g = %f, b = %f\n", color.r, color.g, color.b);;
+
+		square_nb++;
+		square = square->next;
 	}
 }

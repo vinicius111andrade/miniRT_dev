@@ -68,9 +68,20 @@
 064 - FATAL - Sphere has a negative RGB number.
 065 - FATAL - Sphere coordinate with wrong number of values. Must be 3, xyz.
 066 - FATAL - Sphere coordinate with weird value.
-067 - FATAL - Sphere diameter can't be negative.
+067 - FATAL - Sphere diameter can't be negative or zero.
 068 - FATAL - Sphere has an out of bounds RGB number. Must be 0 <= n <= 255.
-069 - FATAL - Sphere brightness is not a proper ratio. Must be 0 <= n <= 1.
+069 - FATAL - Nice.
+
+070 - FATAL - Square has the wrong number of arguments.
+071 - FATAL - Square side size is not well formatted.
+072 - FATAL - Square has a weird RGB number.
+073 - FATAL - Square RGB argument has wrong number of values.
+074 - FATAL - Square has a negative RGB number.
+075 - FATAL - Square coordinate with wrong number of values. Must be 3, xyz.
+076 - FATAL - Square coordinate with weird value.
+077 - FATAL - Square side size can't be negative or zero.
+078 - FATAL - Square has an out of bounds RGB number. Must be 0 <= n <= 255.
+079 - FATAL - Square normal vector has at least one value outside the interval [-1,1].
 
 # Achei objeto (990 a 998)
 

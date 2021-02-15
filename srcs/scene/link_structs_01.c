@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 17:54:48 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 21:03:49 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 21:29:20 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,5 +70,20 @@ void	link_sphere(t_scene *scene, t_sp *new_sphere)
 		while (last_sphere->next)
 			last_sphere = last_sphere->next;
 		last_sphere->next = new_sphere;
+	}
+}
+
+void	link_square(t_scene *scene, t_sq *new_square)
+{
+	t_sq	*last_square;
+
+	last_square = scene->sq;
+	if (!last_square)
+		scene->sq = new_square;
+	else
+	{
+		while (last_square->next)
+			last_square = last_square->next;
+		last_square->next = new_square;
 	}
 }

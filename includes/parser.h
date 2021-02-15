@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:34:05 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 21:07:03 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 21:31:35 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,6 @@ t_tuples	str_to_tuple(char **xyz, int is_point);
 void		parse_light(t_scene *scene);
 void		parse_plane(t_scene *scene);
 void		parse_sphere(t_scene *scene);
+void		parse_square(t_scene *scene);
 
 #endif

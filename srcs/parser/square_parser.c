@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sphere_parser.c                                    :+:      :+:    :+:   */
+/*   square_parser.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/15 20:52:05 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 21:23:45 by vde-melo         ###   ########.fr       */
+/*   Created: 2021/02/15 21:14:28 by vde-melo          #+#    #+#             */
+/*   Updated: 2021/02/15 21:38:22 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,12 +20,12 @@ static t_tuples	get_and_check_xyz(char *coord, int is_point)
 
 	xyz = ft_split(coord, ',');
 	if (count_snippets(xyz) != 3)
-		fatal_error_msg("065");
+		fatal_error_msg("075");
 	i = 0;
 	while (i < 3)
 	{
 		if (is_number(xyz[i]) == 0)
-			fatal_error_msg("066");
+			fatal_error_msg("076");
 		i++;
 	}
 	tuple = str_to_tuple(xyz, is_point);
@@ -33,7 +33,7 @@ static t_tuples	get_and_check_xyz(char *coord, int is_point)
 	return tuple;
 }
 
-static void	validate_sphere_color(char **rgb)
+static void	validate_square_color(char **rgb)
 {
 	int			i;
 
@@ -41,50 +41,62 @@ static void	validate_sphere_color(char **rgb)
 	while (i < 3)
 	{
 		if (is_number(rgb[i]) == 0 || is_int(rgb[i]) == 0)
-			fatal_error_msg("062");
+			fatal_error_msg("072");
 		else if (nonnegative_str_nb(rgb[i]) == 0)
-			fatal_error_msg("064");
+			fatal_error_msg("074");
 		i++;
 	}
 }
 
-static void	validate_diameter(char *diameter_str)
+static void	validate_side_size(char *side_str)
 {
-	if (is_number(diameter_str) == 0)
-		fatal_error_msg("061");
+	if (is_number(side_str) == 0)
+		fatal_error_msg("071");
 }
 
 static void	check_arg_nb(char **snippets, char **rgb)
 {
-	if (count_snippets(snippets) != 4)
-		fatal_error_msg("060");
+	if (count_snippets(snippets) != 5)
+		fatal_error_msg("070");
 	if (count_snippets(rgb) != 3)
-		fatal_error_msg("063");
+		fatal_error_msg("073");
 }
 
-void		parse_sphere(t_scene *scene)
+static void validate_normal(t_tuples normal)
+{
+	if (normal.x < -1.0 || normal.x > 1.0)
+		fatal_error_msg("079");
+	else if (normal.y < -1.0 || normal.y > 1.0)
+		fatal_error_msg("079");
+	else if (normal.z < -1.0 || normal.z > 1.0)
+		fatal_error_msg("079");
+}
+
+void		parse_square(t_scene *scene)
 {
 	char		**snippets;
 	char		**rgb;
-	t_sp		*sphere;
+	t_sq		*square;
 	t_colors	color;
 
 	validate_line_chars(scene->line);
 	snippets = ft_split(scene->line, ' ');
-	rgb = ft_split(snippets[3], ',');
+	rgb = ft_split(snippets[4], ',');
 	check_arg_nb(snippets, rgb);
-	validate_sphere_color(rgb);
-	validate_diameter(snippets[2]);
-	sphere = init_sp();
-	sphere->origin = get_and_check_xyz(snippets[1], 1);
-	sphere->diameter = str_to_double(snippets[2]);
-	if (sphere->diameter <= 0.0)
-		fatal_error_msg("067");
+	validate_square_color(rgb);
+	validate_side_size(snippets[3]);
+	square = init_sq();
+	square->origin = get_and_check_xyz(snippets[1], 1);
+	square->normal = get_and_check_xyz(snippets[2], 0);
+	validate_normal(square->normal);
+	square->side = str_to_double(snippets[3]);
+	if (square->side <= 0.0)
+		fatal_error_msg("077");
 	get_rgb(rgb, &color);
 	if (validate_rgb_bounds(color) == 0)
-		fatal_error_msg("068");
-	sphere->color = color;
-	link_sphere(scene, sphere);
-	free_snippets(snippets, 4);
+		fatal_error_msg("078");
+	square->color = color;
+	link_square(scene, square);
+	free_snippets(snippets, 5);
 	free_snippets(rgb, 3);
 }
