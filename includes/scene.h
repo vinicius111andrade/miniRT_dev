@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 22:43:19 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 17:52:11 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 19:07:22 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,5 +123,6 @@ t_cy				*init_cy(void);
 t_tr				*init_tr(void);
 void				link_cam(t_scene *scene, t_cam *new_cam);
 void				link_light(t_scene *scene, t_light *new_light);
+void				link_plane(t_scene *scene, t_pl *new_plane);
 
 #endif

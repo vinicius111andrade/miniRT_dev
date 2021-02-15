@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 18:19:57 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 17:58:57 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 19:06:23 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	test_parsing(t_scene *scene)
 	printf("Amb Light Brightness = %f, r = %f, g = %f, b = %f\n", amb_light->brightness, color.r, color.g, color.b);
 	test_cam_parsing(scene);
 	test_light_parsing(scene);
+	test_plane_parsing(scene);
 }
 
 void	test_cam_parsing(t_scene *scene)
@@ -78,5 +79,32 @@ void	test_light_parsing(t_scene *scene)
 
 		light_nb++;
 		light = light->next;
+	}
+}
+
+void	test_plane_parsing(t_scene *scene)
+{
+	t_pl			*plane;
+	t_tuples		origin;
+	t_tuples		normal;
+	t_colors		color;
+	int				plane_nb;
+
+	plane = scene->pl;
+	plane_nb = 1;
+	printf("\n\nTESTING PLANES\n");
+	while (plane != NULL)
+	{
+		origin = plane->origin;
+		normal = plane ->normal;
+		color = plane->color;
+
+		printf("\nPlane Number %d\n", plane_nb);
+		printf("Plane Origin: x = %f, y = %f, z = %f\n", origin.x, origin.y, origin.z);
+		printf("Plane Normal: x = %f, y = %f, z = %f\n", normal.x, normal.y, normal.z);
+		printf("Plane Color r = %f, g = %f, b = %f\n", color.r, color.g, color.b);;
+
+		plane_nb++;
+		plane = plane->next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 17:54:48 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 17:52:18 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 19:09:17 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,4 +43,21 @@ void	link_light(t_scene *scene, t_light *new_light)
 			last_light = last_light->next;
 		last_light->next = new_light;
 	}
+}
+
+void	link_plane(t_scene *scene, t_pl *new_plane)
+{
+	t_pl	*last_plane;
+
+	last_plane = scene->pl;
+
+	if (!last_plane)
+		scene->pl = new_plane;
+	else
+	{
+		while (last_plane->next)
+			last_plane = last_plane->next;
+		last_plane->next = new_plane;
+	}
+	test_plane_parsing(scene);
 }

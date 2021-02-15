@@ -50,6 +50,17 @@
 048 - FATAL - Light has an out of bounds RGB number. Must be 0 <= n <= 255.
 049 - FATAL - Light brightness is not a proper ratio. Must be 0 <= n <= 1.
 
+050 - FATAL - Plane has the wrong number of arguments.
+051 - FATAL - Plane ratio is not well formatted.
+052 - FATAL - Plane has a weird RGB number.
+053 - FATAL - Plane RGB argument has wrong number of values.
+054 - FATAL - Plane has a negative RGB number.
+055 - FATAL - Plane coordinate with wrong number of values. Must be 3, xyz.
+056 - FATAL - Plane coordinate with weird value.
+057 - FATAL - Plane normal vector has at least one value outside the interval [-1,1].
+058 - FATAL - Plane has an out of bounds RGB number. Must be 0 <= n <= 255.
+059 - FATAL - Plane brightness is not a proper ratio. Must be 0 <= n <= 1.
+
 # Achei objeto (990 a 998)
 
 990 - Achei R de Resolution
