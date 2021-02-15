@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 17:56:06 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/12 21:56:21 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 16:52:02 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,20 @@
 
 t_res			*init_res(void)
 {
-	t_res		*res;
-
-	res = malloc(sizeof(t_res));
-	*res = (t_res) {0};
-	return (res);
+	return (t_res *) ft_calloc(1, sizeof(t_res));
 }
 
 t_amb_light		*init_amb_light(void)
 {
-	t_amb_light	*amb_light;
-
-	amb_light = malloc(sizeof(t_amb_light));
-	*amb_light = (t_amb_light) {0};
-	return (amb_light);
+	return (t_amb_light *) ft_calloc(1, sizeof(t_amb_light));
 }
 
 t_cam			*init_cam(void)
 {
 	t_cam		*cam;
 
-	cam = malloc(sizeof(t_cam));
-	*cam = (t_cam) {{0}, {0}, 0, 0};
+	cam = ft_calloc(1, sizeof(t_cam));
+	cam->next = NULL;
 	return (cam);
 }
 
@@ -44,8 +36,8 @@ t_light			*init_light(void)
 {
 	t_light		*light;
 
-	light = malloc(sizeof(t_light));
-	*light = (t_light) {{0}, 0, {0}, 0};
+	light = ft_calloc(1, sizeof(t_light));
+	light->next = NULL;
 	return (light);
 }
 
@@ -53,7 +45,7 @@ t_pl			*init_pl(void)
 {
 	t_pl		*pl;
 
-	pl = malloc(sizeof(t_pl));
-	*pl = (t_pl) {{0}, {0}, {0}, 0};
+	pl = ft_calloc(1, sizeof(t_pl));
+	pl->next = NULL;
 	return (pl);
 }

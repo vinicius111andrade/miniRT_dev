@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 22:43:19 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/12 21:19:41 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 13:42:47 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "colors.h"
 # include "tuples.h"
+# include "libft.h"
 
 /*
 ** Scene elements defined in .rt
