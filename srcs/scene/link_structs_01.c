@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 17:54:48 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 17:10:21 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 17:52:18 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,21 @@ void	link_cam(t_scene *scene, t_cam *new_cam)
 		while (last_cam->next)
 			last_cam = last_cam->next;
 		last_cam->next = new_cam;
+	}
+}
+
+void	link_light(t_scene *scene, t_light *new_light)
+{
+	t_light	*last_light;
+
+	last_light = scene->light;
+
+	if (!last_light)
+		scene->light = new_light;
+	else
+	{
+		while (last_light->next)
+			last_light = last_light->next;
+		last_light->next = new_light;
 	}
 }

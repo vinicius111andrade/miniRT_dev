@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 14:37:35 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/12 18:47:12 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 17:39:51 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,5 +84,5 @@ void		parse_cam(t_scene *scene)
 	validate_direction_and_fov(cam->direction, cam->fov);
 	link_cam(scene, cam);
 	scene->has_cam = 1;
-	free_snippets(snippets, 3);
+	free_snippets(snippets, 4);
 }

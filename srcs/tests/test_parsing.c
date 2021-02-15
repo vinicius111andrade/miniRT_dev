@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 18:19:57 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 17:11:25 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 17:58:57 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ void	test_parsing(t_scene *scene)
 	printf("\n\nResolution x = %f, y = = %f\n", res->x, res->y); //printf
 	printf("Amb Light Brightness = %f, r = %f, g = %f, b = %f\n", amb_light->brightness, color.r, color.g, color.b);
 	test_cam_parsing(scene);
+	test_light_parsing(scene);
 }
 
 void	test_cam_parsing(t_scene *scene)
@@ -50,5 +51,32 @@ void	test_cam_parsing(t_scene *scene)
 
 		cam_nb++;
 		cam = cam->next;
+	}
+}
+
+void	test_light_parsing(t_scene *scene)
+{
+	t_light			*light;
+	t_tuples		light_origin;
+	double			brigth;
+	t_colors		color;
+	int				light_nb;
+
+	light = scene->light;
+	light_nb = 1;
+	printf("\n\nTESTING LIGHTS\n");
+	while (light != NULL)
+	{
+		light_origin = light->origin;
+		brigth = light->brightness;
+		color = light->color;
+
+		printf("\nLight Number %d\n", light_nb);
+		printf("Light Origin: x = %f, y = %f, z = %f\n", light_origin.x, light_origin.y, light_origin.z);
+		printf("Light Brightness: %f\n", brigth);
+		printf("Light Color r = %f, g = %f, b = %f\n", color.r, color.g, color.b);;
+
+		light_nb++;
+		light = light->next;
 	}
 }

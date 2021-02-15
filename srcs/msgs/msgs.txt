@@ -19,9 +19,11 @@
 021 - FATAL - Found an invalid char in your .rt, check the file please. Every non comment line must have only the info asked sepparated by spaces.
 022 - FATAL - In your .rt file the R line has the wrong number of arguments, check documentation.
 023 - FATAL - Your .rt lacks information needed to render anyting. MUST have resolution, ambient light and one camera.
+
 024 - FATAL - The resolution given in the .rt is invalid, check it please.
 025 - FATAL - Resolution has been given more than once.
 026 - FATAL - Resolution must be greater than zero.
+
 027 - FATAL - Ambient light ratio is not well formatted.
 028 - FATAL - Ambient light has been given more than once.
 029 - FATAL - Ambient light has the wrong number of arguments.
@@ -30,12 +32,23 @@
 032 - FATAL - Ambient light has a negative RGB number.
 033 - FATAL - Ambient light has an out of bounds RGB number. Must be 0 <= n <= 255.
 034 - FATAL - Ambient light brightness is not a proper ratio. Must be 0 <= n <= 1.
+
 035 - FATAL - Camera has the wrong number of arguments.
 036 - FATAL - Camera has weird FOV value.
 037 - FATAL - Camera coordinate with wrong number of values. Must be 3, xyz.
 038 - FATAL - Camera coordinate with weird value.
 039 - FATAL - Camera direction vector has at least one value outside the interval [-1,1].
 040 - FATAL - Camera FOV is out of bounds, it must be between 0 and 180.
+
+041 - FATAL - Light has the wrong number of arguments.
+042 - FATAL - Light ratio is not well formatted.
+043 - FATAL - Light has a weird RGB number.
+044 - FATAL - Light RGB argument has wrong number of values.
+045 - FATAL - Light has a negative RGB number.
+046 - FATAL - Light coordinate with wrong number of values. Must be 3, xyz.
+047 - FATAL - Light coordinate with weird value.
+048 - FATAL - Light has an out of bounds RGB number. Must be 0 <= n <= 255.
+049 - FATAL - Light brightness is not a proper ratio. Must be 0 <= n <= 1.
 
 # Achei objeto (990 a 998)
 
