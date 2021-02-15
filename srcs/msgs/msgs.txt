@@ -61,6 +61,17 @@
 058 - FATAL - Plane has an out of bounds RGB number. Must be 0 <= n <= 255.
 059 - FATAL - Plane brightness is not a proper ratio. Must be 0 <= n <= 1.
 
+060 - FATAL - Sphere has the wrong number of arguments.
+061 - FATAL - Sphere diameter is not well formatted.
+062 - FATAL - Sphere has a weird RGB number.
+063 - FATAL - Sphere RGB argument has wrong number of values.
+064 - FATAL - Sphere has a negative RGB number.
+065 - FATAL - Sphere coordinate with wrong number of values. Must be 3, xyz.
+066 - FATAL - Sphere coordinate with weird value.
+067 - FATAL - Sphere diameter can't be negative.
+068 - FATAL - Sphere has an out of bounds RGB number. Must be 0 <= n <= 255.
+069 - FATAL - Sphere brightness is not a proper ratio. Must be 0 <= n <= 1.
+
 # Achei objeto (990 a 998)
 
 990 - Achei R de Resolution

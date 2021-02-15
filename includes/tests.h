@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/07 17:11:35 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 19:06:55 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 21:06:46 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,6 @@ void	test_parsing(t_scene *scene);
 void	test_cam_parsing(t_scene *scene);
 void	test_light_parsing(t_scene *scene);
 void	test_plane_parsing(t_scene *scene);
+void	test_sphere_parsing(t_scene *scene);
 
 #endif

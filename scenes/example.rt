@@ -47,6 +47,7 @@ pl +0.0,+0.0,-0.0   -1.0,+1.0,+0.0   140,118,206
 ### SPHERE
 ## origin           diameter           color
 sp +0.0,+1.0,+0.0   2.0            216,56,136
+# sp +0.0,-1.0,-0.0   2.0            216,56,136
 
 ### SQUARE
 ## origin           unit vector      side size   color

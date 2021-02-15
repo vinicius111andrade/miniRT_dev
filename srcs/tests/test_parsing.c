@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 18:19:57 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 20:45:58 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 21:12:59 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	test_parsing(t_scene *scene)
 	test_cam_parsing(scene);
 	test_light_parsing(scene);
 	test_plane_parsing(scene);
+	test_sphere_parsing(scene);
 }
 
 void	test_cam_parsing(t_scene *scene)
@@ -106,5 +107,32 @@ void	test_plane_parsing(t_scene *scene)
 
 		plane_nb++;
 		plane = plane->next;
+	}
+}
+
+void	test_sphere_parsing(t_scene *scene)
+{
+	t_sp			*sphere;
+	t_tuples		origin;
+	double			diameter;
+	t_colors		color;
+	int				sphere_nb;
+
+	sphere = scene->sp;
+	sphere_nb = 1;
+	printf("\n\nTESTING SPHERES\n");
+	while (sphere != NULL)
+	{
+		origin = sphere->origin;
+		diameter = sphere ->diameter;
+		color = sphere->color;
+
+		printf("\nSphere Number %d\n", sphere_nb);
+		printf("Sphere Origin: x = %f, y = %f, z = %f\n", origin.x, origin.y, origin.z);
+		printf("Sphere Diameter: %f\n", diameter);
+		printf("Sphere Color r = %f, g = %f, b = %f\n", color.r, color.g, color.b);;
+
+		sphere_nb++;
+		sphere = sphere->next;
 	}
 }

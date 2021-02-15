@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 17:54:48 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 20:43:46 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 21:03:49 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,6 @@ void	link_plane(t_scene *scene, t_pl *new_plane)
 {
 	t_pl	*last_plane;
 
-	msg("000");
 	last_plane = scene->pl;
 	if (!last_plane)
 		scene->pl = new_plane;
@@ -56,5 +55,20 @@ void	link_plane(t_scene *scene, t_pl *new_plane)
 		while (last_plane->next)
 			last_plane = last_plane->next;
 		last_plane->next = new_plane;
+	}
+}
+
+void	link_sphere(t_scene *scene, t_sp *new_sphere)
+{
+	t_sp	*last_sphere;
+
+	last_sphere = scene->sp;
+	if (!last_sphere)
+		scene->sp = new_sphere;
+	else
+	{
+		while (last_sphere->next)
+			last_sphere = last_sphere->next;
+		last_sphere->next = new_sphere;
 	}
 }

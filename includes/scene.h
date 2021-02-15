@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/08 22:43:19 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 19:07:22 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 21:07:18 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,5 +124,6 @@ t_tr				*init_tr(void);
 void				link_cam(t_scene *scene, t_cam *new_cam);
 void				link_light(t_scene *scene, t_light *new_light);
 void				link_plane(t_scene *scene, t_pl *new_plane);
+void				link_sphere(t_scene *scene, t_sp *new_sphere);
 
 #endif

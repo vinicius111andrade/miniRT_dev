@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 19:37:01 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 20:50:20 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 20:51:48 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	parse_line(int id_nb, t_scene *scene)
 	else if (id_nb == 3)
 		parse_light(scene);
 	else if (id_nb == 4)
-		msg("994");
+		parse_sphere(scene);
 	else if (id_nb == 5)
 		parse_plane(scene);
 	else if (id_nb == 6)
