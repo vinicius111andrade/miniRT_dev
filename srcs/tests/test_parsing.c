@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 18:19:57 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 21:56:47 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 22:13:10 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void	test_parsing(t_scene *scene)
 	test_sphere_parsing(scene);
 	test_square_parsing(scene);
 	test_cylinder_parsing(scene);
+	test_triangle_parsing(scene);
 }
 
 void	test_cam_parsing(t_scene *scene)
@@ -199,5 +200,35 @@ void	test_cylinder_parsing(t_scene *scene)
 
 		cylinder_nb++;
 		cylinder = cylinder->next;
+	}
+}
+
+void	test_triangle_parsing(t_scene *scene)
+{
+	t_tr			*triangle;
+	t_tuples		p1;
+	t_tuples		p2;
+	t_tuples		p3;
+	t_colors		color;
+	int				triangle_nb;
+
+	triangle = scene->tr;
+	triangle_nb = 1;
+	printf("\n\nTESTING TRIANGLES\n");
+	while (triangle != NULL)
+	{
+		p1 = triangle->p1;
+		p2 = triangle->p2;
+		p3 = triangle->p3;
+		color = triangle->color;
+
+		printf("\nTriangle Number %d\n", triangle_nb);
+		printf("Triangle Point 1: x = %f, y = %f, z = %f\n", p1.x, p1.y, p1.z);
+		printf("Triangle Point 2: x = %f, y = %f, z = %f\n", p2.x, p2.y, p2.z);
+		printf("Triangle Point 3: x = %f, y = %f, z = %f\n", p3.x, p3.y, p3.z);
+		printf("Triangle Color r = %f, g = %f, b = %f\n", color.r, color.g, color.b);;
+
+		triangle_nb++;
+		triangle = triangle->next;
 	}
 }

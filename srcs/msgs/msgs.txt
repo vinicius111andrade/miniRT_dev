@@ -96,6 +96,14 @@
 090 - FATAL - Cylinder height is not well formatted.
 091 - FATAL - Cylinder height can't be negative or zero.
 
+092 - FATAL - Cylinder has the wrong number of arguments.
+093 - FATAL - Cylinder has a weird RGB number.
+094 - FATAL - Cylinder RGB argument has wrong number of values.
+095 - FATAL - Cylinder has a negative RGB number.
+096 - FATAL - Cylinder coordinate with wrong number of values. Must be 3, xyz.
+097 - FATAL - Cylinder coordinate with weird value.
+098 - FATAL - Cylinder has an out of bounds RGB number. Must be 0 <= n <= 255.
+
 # Achei objeto (990 a 998)
 
 990 - Achei R de Resolution
