@@ -83,6 +83,19 @@
 078 - FATAL - Square has an out of bounds RGB number. Must be 0 <= n <= 255.
 079 - FATAL - Square normal vector has at least one value outside the interval [-1,1].
 
+080 - FATAL - Cylinder has the wrong number of arguments.
+081 - FATAL - Cylinder diameter is not well formatted.
+082 - FATAL - Cylinder has a weird RGB number.
+083 - FATAL - Cylinder RGB argument has wrong number of values.
+084 - FATAL - Cylinder has a negative RGB number.
+085 - FATAL - Cylinder coordinate with wrong number of values. Must be 3, xyz.
+086 - FATAL - Cylinder coordinate with weird value.
+087 - FATAL - Cylinder diameter can't be negative or zero.
+088 - FATAL - Cylinder has an out of bounds RGB number. Must be 0 <= n <= 255.
+089 - FATAL - Cylinder normal vector has at least one value outside the interval [-1,1].
+090 - FATAL - Cylinder height is not well formatted.
+091 - FATAL - Cylinder height can't be negative or zero.
+
 # Achei objeto (990 a 998)
 
 990 - Achei R de Resolution

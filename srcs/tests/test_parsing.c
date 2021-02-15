@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 18:19:57 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 21:39:05 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 21:56:47 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	test_parsing(t_scene *scene)
 	test_plane_parsing(scene);
 	test_sphere_parsing(scene);
 	test_square_parsing(scene);
+	test_cylinder_parsing(scene);
 }
 
 void	test_cam_parsing(t_scene *scene)
@@ -165,5 +166,38 @@ void	test_square_parsing(t_scene *scene)
 
 		square_nb++;
 		square = square->next;
+	}
+}
+
+void	test_cylinder_parsing(t_scene *scene)
+{
+	t_cy			*cylinder;
+	t_tuples		origin;
+	t_tuples		normal;
+	double			diameter;
+	double			height;
+	t_colors		color;
+	int				cylinder_nb;
+
+	cylinder = scene->cy;
+	cylinder_nb = 1;
+	printf("\n\nTESTING CYLINDERS\n");
+	while (cylinder != NULL)
+	{
+		origin = cylinder->origin;
+		normal = cylinder->normal;
+		diameter = cylinder ->diameter;
+		height = cylinder ->height;
+		color = cylinder->color;
+
+		printf("\nCylinder Number %d\n", cylinder_nb);
+		printf("Cylinder Origin: x = %f, y = %f, z = %f\n", origin.x, origin.y, origin.z);
+		printf("Cylinder Normal: x = %f, y = %f, z = %f\n", normal.x, normal.y, normal.z);
+		printf("Cylinder Diameter: %f\n", diameter);
+		printf("Cylinder Height: %f\n", height);
+		printf("Cylinder Color r = %f, g = %f, b = %f\n", color.r, color.g, color.b);;
+
+		cylinder_nb++;
+		cylinder = cylinder->next;
 	}
 }

@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tests.h                                            :+:      :+:    :+:   */
+/*   link_structs_02.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/07 17:11:35 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 21:56:55 by vde-melo         ###   ########.fr       */
+/*   Created: 2021/02/15 21:51:09 by vde-melo          #+#    #+#             */
+/*   Updated: 2021/02/15 21:52:47 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TESTS_H
-# define TESTS_H
+#include "scene.h"
+#include "minirt.h"
 
-# include <stdio.h>
-# include <stdlib.h>
-# include "minirt.h"
+void	link_cylinder(t_scene *scene, t_cy *new_cylinder)
+{
+	t_cy	*last_cylinder;
 
-void	test_parsing(t_scene *scene);
-void	test_cam_parsing(t_scene *scene);
-void	test_light_parsing(t_scene *scene);
-void	test_plane_parsing(t_scene *scene);
-void	test_sphere_parsing(t_scene *scene);
-void	test_square_parsing(t_scene *scene);
-void	test_cylinder_parsing(t_scene *scene);
-
-#endif
+	last_cylinder = scene->cy;
+	if (!last_cylinder)
+		scene->cy = new_cylinder;
+	else
+	{
+		while (last_cylinder->next)
+			last_cylinder = last_cylinder->next;
+		last_cylinder->next = new_cylinder;
+	}
+}
