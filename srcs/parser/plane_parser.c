@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 18:50:13 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 19:01:23 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 20:43:16 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,16 @@ static void	check_arg_nb(char **snippets, char **rgb)
 		fatal_error_msg("053");
 }
 
+static void validate_normal(t_tuples normal)
+{
+	if (normal.x < -1.0 || normal.x > 1.0)
+		fatal_error_msg("057");
+	else if (normal.y < -1.0 || normal.y > 1.0)
+		fatal_error_msg("057");
+	else if (normal.z < -1.0 || normal.z > 1.0)
+		fatal_error_msg("057");
+}
+
 void		parse_plane(t_scene *scene)
 {
 	char		**snippets;
@@ -71,6 +81,7 @@ void		parse_plane(t_scene *scene)
 	plane = init_pl();
 	plane->origin = get_and_check_xyz(snippets[1], 1);
 	plane->normal = get_and_check_xyz(snippets[2], 0);
+	validate_normal(plane->normal);
 	get_rgb(rgb, &color);
 	if (validate_rgb_bounds(color) == 0)
 		fatal_error_msg("058");

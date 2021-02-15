@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 19:37:01 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 17:24:49 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 20:50:20 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	parse_line(int id_nb, t_scene *scene)
 	else if (id_nb == 4)
 		msg("994");
 	else if (id_nb == 5)
-		msg("995");
+		parse_plane(scene);
 	else if (id_nb == 6)
 		msg("996");
 	else if (id_nb == 7)
