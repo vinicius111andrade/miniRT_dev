@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:28:48 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/12 22:46:34 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 23:14:39 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 ** se n achar nada disso ele diz q o .rt eh invalido
 ** achando o id ele manda pra uma outra funcao a linha, o id, e o scene
 */
+
 void	parse_file(char *file, t_scene *scene)
 {
 	static char		*id[11] = {"R ", "A ", "c ", "l ",
@@ -42,7 +43,6 @@ void	parse_file(char *file, t_scene *scene)
 		free(scene->line);
 	}
 	close(fd);
-	test_parsing(scene); //retirar o teste
 	if (scene->has_res == 0 || scene->has_ambl == 0 || scene->has_cam == 0)
 		fatal_error_msg("023");
 }

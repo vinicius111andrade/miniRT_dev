@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 21:41:35 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 21:57:45 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 23:08:05 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,13 @@ static t_tuples	get_and_check_xyz(char *coord, int is_point)
 	}
 	tuple = str_to_tuple(xyz, is_point);
 	free_snippets(xyz, 3);
-	return tuple;
+	return (tuple);
 }
 
-static void	validate_cylinder_color(char **rgb)
+static void		validate_some_cylinder_arguments(char **rgb, t_cy *cylinder)
 {
 	int			i;
+	t_tuples	normal;
 
 	i = 0;
 	while (i < 3)
@@ -46,9 +47,20 @@ static void	validate_cylinder_color(char **rgb)
 			fatal_error_msg("084");
 		i++;
 	}
+	normal = cylinder->normal;
+	if (normal.x < -1.0 || normal.x > 1.0)
+		fatal_error_msg("079");
+	else if (normal.y < -1.0 || normal.y > 1.0)
+		fatal_error_msg("079");
+	else if (normal.z < -1.0 || normal.z > 1.0)
+		fatal_error_msg("079");
+	if (cylinder->diameter <= 0.0)
+		fatal_error_msg("087");
+	if (cylinder->height <= 0.0)
+		fatal_error_msg("091");
 }
 
-static void	validate_diameter_n_height(char *diameter, char *height)
+static void		validate_diameter_n_height(char *diameter, char *height)
 {
 	if (is_number(diameter) == 0)
 		fatal_error_msg("081");
@@ -56,7 +68,7 @@ static void	validate_diameter_n_height(char *diameter, char *height)
 		fatal_error_msg("090");
 }
 
-static void	check_arg_nb(char **snippets, char **rgb)
+static void		check_arg_nb(char **snippets, char **rgb)
 {
 	if (count_snippets(snippets) != 6)
 		fatal_error_msg("080");
@@ -64,17 +76,7 @@ static void	check_arg_nb(char **snippets, char **rgb)
 		fatal_error_msg("083");
 }
 
-static void validate_normal(t_tuples normal)
-{
-	if (normal.x < -1.0 || normal.x > 1.0)
-		fatal_error_msg("079");
-	else if (normal.y < -1.0 || normal.y > 1.0)
-		fatal_error_msg("079");
-	else if (normal.z < -1.0 || normal.z > 1.0)
-		fatal_error_msg("079");
-}
-
-void		parse_cylinder(t_scene *scene)
+void			parse_cylinder(t_scene *scene)
 {
 	char		**snippets;
 	char		**rgb;
@@ -85,18 +87,13 @@ void		parse_cylinder(t_scene *scene)
 	snippets = ft_split(scene->line, ' ');
 	rgb = ft_split(snippets[5], ',');
 	check_arg_nb(snippets, rgb);
-	validate_cylinder_color(rgb);
 	validate_diameter_n_height(snippets[3], snippets[4]);
 	cylinder = init_cy();
 	cylinder->origin = get_and_check_xyz(snippets[1], 1);
 	cylinder->normal = get_and_check_xyz(snippets[2], 0);
-	validate_normal(cylinder->normal);
 	cylinder->diameter = str_to_double(snippets[3]);
-	if (cylinder->diameter <= 0.0)
-		fatal_error_msg("087");
 	cylinder->height = str_to_double(snippets[4]);
-	if (cylinder->height <= 0.0)
-		fatal_error_msg("091");
+	validate_some_cylinder_arguments(rgb, cylinder);
 	get_rgb(rgb, &color);
 	if (validate_rgb_bounds(color) == 0)
 		fatal_error_msg("088");

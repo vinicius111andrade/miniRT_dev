@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tuples_operations_01.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vde-melo <vde-melo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 20:08:21 by vde-melo          #+#    #+#             */
-/*   Updated: 2020/11/25 20:33:18 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 22:54:59 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ t_tuples		normalize(t_tuples v)
 	unit.y = v.y / mag;
 	unit.z = v.z / mag;
 	unit.w = v.w;
-	return unit;
+	return (unit);
 }
 
 t_tuples		crossproduct(t_tuples a, t_tuples b)

@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 17:47:49 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/12 20:26:56 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 22:52:29 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@
 # include "tuples.h"
 # include "msgs.h"
 # include "parser.h"
-# include "tests.h" //tirar depois
+# include "tests.h" //tirar depois, tirar da pasta includes tbm
 
 /*
 ** Structs

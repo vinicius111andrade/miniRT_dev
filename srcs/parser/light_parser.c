@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 17:15:07 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 18:44:55 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 23:00:06 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ static t_tuples	get_and_check_xyz(char *coord, int is_point)
 	}
 	tuple = str_to_tuple(xyz, is_point);
 	free_snippets(xyz, 3);
-	return tuple;
+	return (tuple);
 }
 
-static void	validate_light(char **snippets, char **rgb)
+static void		validate_light(char **snippets, char **rgb)
 {
 	int			i;
 
@@ -50,7 +50,7 @@ static void	validate_light(char **snippets, char **rgb)
 	}
 }
 
-static void	check_arg_nb(char **snippets, char **rgb)
+static void		check_arg_nb(char **snippets, char **rgb)
 {
 	if (count_snippets(snippets) != 4)
 		fatal_error_msg("041");
@@ -58,7 +58,7 @@ static void	check_arg_nb(char **snippets, char **rgb)
 		fatal_error_msg("044");
 }
 
-void		parse_light(t_scene *scene)
+void			parse_light(t_scene *scene)
 {
 	char		**snippets;
 	char		**rgb;

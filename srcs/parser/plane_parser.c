@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 18:50:13 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 20:43:16 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 22:58:26 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,10 @@ static t_tuples	get_and_check_xyz(char *coord, int is_point)
 	}
 	tuple = str_to_tuple(xyz, is_point);
 	free_snippets(xyz, 3);
-	return tuple;
+	return (tuple);
 }
 
-static void	validate_plane_color(char **rgb)
+static void		validate_plane_color(char **rgb)
 {
 	int			i;
 
@@ -48,7 +48,7 @@ static void	validate_plane_color(char **rgb)
 	}
 }
 
-static void	check_arg_nb(char **snippets, char **rgb)
+static void		check_arg_nb(char **snippets, char **rgb)
 {
 	if (count_snippets(snippets) != 4)
 		fatal_error_msg("050");
@@ -56,7 +56,7 @@ static void	check_arg_nb(char **snippets, char **rgb)
 		fatal_error_msg("053");
 }
 
-static void validate_normal(t_tuples normal)
+static void		validate_normal(t_tuples normal)
 {
 	if (normal.x < -1.0 || normal.x > 1.0)
 		fatal_error_msg("057");
@@ -66,7 +66,7 @@ static void validate_normal(t_tuples normal)
 		fatal_error_msg("057");
 }
 
-void		parse_plane(t_scene *scene)
+void			parse_plane(t_scene *scene)
 {
 	char		**snippets;
 	char		**rgb;

@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:34:05 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 22:09:39 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 23:36:54 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 int			reversed_strncmp(const char *s1, const char *s2, size_t n);
 int			validate_line_chars(char *str);
 int			is_int(char *str);
+int			is_valid_char(char c);
 int			is_number(char *str);
 double		str_to_double(char *str);
 int			count_snippets(char **line_snippets);

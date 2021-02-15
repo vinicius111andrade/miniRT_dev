@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 17:56:06 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 16:52:02 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 22:54:07 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 t_res			*init_res(void)
 {
-	return (t_res *) ft_calloc(1, sizeof(t_res));
+	return (t_res *)ft_calloc(1, sizeof(t_res));
 }
 
 t_amb_light		*init_amb_light(void)
 {
-	return (t_amb_light *) ft_calloc(1, sizeof(t_amb_light));
+	return (t_amb_light *)ft_calloc(1, sizeof(t_amb_light));
 }
 
 t_cam			*init_cam(void)

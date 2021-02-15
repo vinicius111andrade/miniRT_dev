@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 14:37:35 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 17:39:51 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/15 23:09:55 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@
 ** colocar na linked list corretamente
 */
 
-static void	validate_fov_str(char **snippets)
+static void		validate_fov_str(char **snippets)
 {
 	if (is_number(snippets[3]) == 0)
 		fatal_error_msg("036");
 }
 
-static void	check_arg_nb(char **snippets)
+static void		check_arg_nb(char **snippets)
 {
 	if (count_snippets(snippets) != 4)
 		fatal_error_msg("035");
@@ -50,10 +50,10 @@ static t_tuples	get_and_check_xyz(char *coord, int is_point)
 	}
 	tuple = str_to_tuple(xyz, is_point);
 	free_snippets(xyz, 3);
-	return tuple;
+	return (tuple);
 }
 
-static void	validate_direction_and_fov(t_tuples direction, double fov)
+static void		validate_direction_and_fov(t_tuples direction, double fov)
 {
 	if (direction.x < -1.0 || direction.x > 1.0)
 		fatal_error_msg("039");
@@ -65,7 +65,7 @@ static void	validate_direction_and_fov(t_tuples direction, double fov)
 		fatal_error_msg("040");
 }
 
-void		parse_cam(t_scene *scene)
+void			parse_cam(t_scene *scene)
 {
 	char		**snippets;
 	t_cam		*cam;
