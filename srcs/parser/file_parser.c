@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:28:48 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 23:14:39 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/17 20:51:56 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,34 @@
 ** achando o id ele manda pra uma outra funcao a linha, o id, e o scene
 */
 
-void	parse_file(char *file, t_scene *scene)
+static void	validate_rt_file_name(char *file)
+{
+	int i;
+
+	i = 0;
+	while (file[i])
+	{
+		if (file[i] == '.')
+		{
+			if (file[i + 1] == 'r' && file[i + 2] == 't'
+				&& file[i + 3] == '\0')
+				return ;
+			else
+				fatal_error_msg("015");
+		}
+		i++;
+	}
+	fatal_error_msg("015");
+}
+
+void		parse_file(char *file, t_scene *scene)
 {
 	static char		*id[11] = {"R ", "A ", "c ", "l ",
 								"sp", "pl", "sq", "cy", "tr", "##", "# "};
 	int				id_nb;
 	int				fd;
 
-	if (reversed_strncmp(file, ".rt", 3) != 0)
-		fatal_error_msg("015");
+	validate_rt_file_name(file);
 	if ((fd = open(file, O_RDONLY)) < 0)
 		fatal_error_msg("001");
 	ft_bzero(scene, sizeof(t_scene));
@@ -43,6 +62,6 @@ void	parse_file(char *file, t_scene *scene)
 		free(scene->line);
 	}
 	close(fd);
-	if (scene->has_res == 0 || scene->has_ambl == 0 || scene->has_cam == 0)
+	if (scene->has_res == 0 || scene->has_cam == 0)
 		fatal_error_msg("023");
 }
