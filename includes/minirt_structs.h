@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 19:58:11 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/23 20:17:36 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/23 20:35:04 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,6 @@
 # define MINIRT_STRUCTS_H
 
 # include "minirt_dependencies.h"
-
-/*
-** GLOBAL STRUCT
-*/
-typedef struct	s_rt
-{
-	int			save;
-	int			size_x;
-	int			size_y;
-	t_img		img;
-	t_scene		scene;
-	t_mlx		mlx;
-}				t_rt;
-
-/*
-** MLX STRUCT
-*/
-typedef struct	s_mlx
-{
-	void		*mlx;
-	void		*win;
-	t_cam		*cam;
-	t_cam		*begin;
-	int			bpp;
-	int			line_leng;
-	int			endian;
-	t_rt		*rt;
-}				t_mlx;
 
 /*
 ** SCENE STRUCTS
@@ -134,5 +106,32 @@ typedef struct		s_scene
 	t_cy			*cy;
 	t_tr			*tr;
 }					t_scene;
+
+/*
+** MLX STRUCT
+*/
+typedef struct	s_mlx
+{
+	void		*mlx;
+	void		*win;
+	t_cam		*cam;
+	t_cam		*begin;
+	int			bpp;
+	int			line_leng;
+	int			endian;
+}				t_mlx;
+
+/*
+** GLOBAL STRUCT
+*/
+typedef struct	s_rt
+{
+	int			save;
+	int			size_x;
+	int			size_y;
+	t_img		img;
+	t_scene		scene;
+	t_mlx		mlx;
+}				t_rt;
 
 #endif
