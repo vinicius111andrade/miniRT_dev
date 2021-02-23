@@ -1,21 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_mlx.h                                       :+:      :+:    :+:   */
+/*   minirt_dependencies.h                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/17 21:12:48 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/17 21:15:44 by vde-melo         ###   ########.fr       */
+/*   Created: 2021/02/23 20:12:36 by vde-melo          #+#    #+#             */
+/*   Updated: 2021/02/23 20:16:48 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HANDLE_MLX_H
-# define HANDLE_MLX_H
+#ifndef MINIRT_DEPENDENCIES_H
+# define MINIRT_DEPENDENCIES_H
 
 /*
-** Headers
+** Standard Headers
 */
-# include "minirt.h"
+# include <math.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include <fcntl.h>
+/*
+** Mlx Headers
+*/
+# include "../libs/minilibx-linux/mlx.h"
+# include "../libs/minilibx-linux/mlx_int.h"
+/*
+** My libs
+*/
+# include "libft.h"
+# include "colors.h"
+# include "tuples.h"
 
 #endif

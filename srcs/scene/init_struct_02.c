@@ -6,12 +6,11 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 18:08:28 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 16:51:14 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/23 19:50:30 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "scene.h"
-#include <stdlib.h>
+#include "minirt.h"
 
 t_sp		*init_sp(void)
 {

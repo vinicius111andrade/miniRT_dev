@@ -1,24 +1,50 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   scene.h                                            :+:      :+:    :+:   */
+/*   minirt_structs.h                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/02/08 22:43:19 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 22:08:36 by vde-melo         ###   ########.fr       */
+/*   Created: 2021/02/23 19:58:11 by vde-melo          #+#    #+#             */
+/*   Updated: 2021/02/23 20:17:36 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SCENE_H
-# define SCENE_H
+#ifndef MINIRT_STRUCTS_H
+# define MINIRT_STRUCTS_H
 
-# include "colors.h"
-# include "tuples.h"
-# include "libft.h"
+# include "minirt_dependencies.h"
 
 /*
-** Scene elements defined in .rt
+** GLOBAL STRUCT
+*/
+typedef struct	s_rt
+{
+	int			save;
+	int			size_x;
+	int			size_y;
+	t_img		img;
+	t_scene		scene;
+	t_mlx		mlx;
+}				t_rt;
+
+/*
+** MLX STRUCT
+*/
+typedef struct	s_mlx
+{
+	void		*mlx;
+	void		*win;
+	t_cam		*cam;
+	t_cam		*begin;
+	int			bpp;
+	int			line_leng;
+	int			endian;
+	t_rt		*rt;
+}				t_mlx;
+
+/*
+** SCENE STRUCTS
 */
 typedef struct		s_res
 {
@@ -92,9 +118,6 @@ typedef struct		s_tr
 	struct s_tr		*next;
 }					t_tr;
 
-/*
-** Scene definition
-*/
 typedef struct		s_scene
 {
 	char			*line;
@@ -111,22 +134,5 @@ typedef struct		s_scene
 	t_cy			*cy;
 	t_tr			*tr;
 }					t_scene;
-
-t_res				*init_res(void);
-t_amb_light			*init_amb_light(void);
-t_cam				*init_cam(void);
-t_light				*init_light(void);
-t_pl				*init_pl(void);
-t_sp				*init_sp(void);
-t_sq				*init_sq(void);
-t_cy				*init_cy(void);
-t_tr				*init_tr(void);
-void				link_cam(t_scene *scene, t_cam *new_cam);
-void				link_light(t_scene *scene, t_light *new_light);
-void				link_plane(t_scene *scene, t_pl *new_plane);
-void				link_sphere(t_scene *scene, t_sp *new_sphere);
-void				link_square(t_scene *scene, t_sq *new_square);
-void				link_cylinder(t_scene *scene, t_cy *new_cylinder);
-void				link_triangle(t_scene *scene, t_tr *new_triangle);
 
 #endif

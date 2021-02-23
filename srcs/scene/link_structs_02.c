@@ -6,11 +6,10 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 21:51:09 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 22:08:21 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/23 19:50:16 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "scene.h"
 #include "minirt.h"
 
 void	link_cylinder(t_scene *scene, t_cy *new_cylinder)

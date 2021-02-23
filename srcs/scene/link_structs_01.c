@@ -6,11 +6,10 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 17:54:48 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 21:29:20 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/23 19:50:21 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "scene.h"
 #include "minirt.h"
 
 void	link_cam(t_scene *scene, t_cam *new_cam)
