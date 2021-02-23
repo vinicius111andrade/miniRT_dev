@@ -6,11 +6,11 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 21:24:56 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/12 18:11:24 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/23 20:30:07 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parser.h"
+#include "minirt.h"
 
 /*
 ** tem q achar apenas dois numeros inteiros maiores q zero na str

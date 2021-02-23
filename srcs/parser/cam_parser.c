@@ -6,11 +6,11 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 14:37:35 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 23:09:55 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/23 20:31:10 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parser.h"
+#include "minirt.h"
 
 /*
 ** origem, direcao, fov

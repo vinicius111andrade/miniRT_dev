@@ -6,11 +6,11 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 19:37:01 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 22:56:10 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/23 20:30:41 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parser.h"
+#include "minirt.h"
 
 /*
 ** chama a funcao certa pra ler a linha de acordo com o id_nb

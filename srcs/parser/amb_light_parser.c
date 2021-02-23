@@ -6,11 +6,11 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 21:40:34 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/12 18:11:04 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/23 20:29:23 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parser.h"
+#include "minirt.h"
 
 /*
 ** checar se eh num e se eh ratio

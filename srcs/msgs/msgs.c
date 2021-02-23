@@ -6,11 +6,11 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/04 19:57:50 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/08 20:11:14 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/23 20:29:12 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "msgs.h"
+#include "minirt.h"
 
 void		msg(char *id)
 {

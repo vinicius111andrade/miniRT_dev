@@ -6,11 +6,11 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 23:25:31 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 23:37:17 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/23 20:31:24 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parser.h"
+#include "minirt.h"
 
 static double	add_decimal_part(int i, double number, char *str)
 {

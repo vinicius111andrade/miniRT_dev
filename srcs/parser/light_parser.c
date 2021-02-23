@@ -6,11 +6,11 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/15 17:15:07 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 23:00:06 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/23 20:30:49 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "parser.h"
+#include "minirt.h"
 
 static t_tuples	get_and_check_xyz(char *coord, int is_point)
 {
