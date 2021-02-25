@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 21:24:56 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/23 20:30:07 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/25 15:09:30 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ void		parse_res(t_scene *scene)
 		fatal_error_msg("022");
 	validate_res(snippets);
 	res = init_res();
-	res->x = str_to_double(snippets[1]);
-	res->y = str_to_double(snippets[2]);
+	res->x = ft_atoi(snippets[1]);
+	res->y = ft_atoi(snippets[2]);
 	if (res->x < 1 || res->y < 1)
 		fatal_error_msg("026");
 	scene->res = res;

@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 18:28:48 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/23 20:30:56 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/25 15:33:03 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ static void	validate_rt_file_name(char *file)
 	int i;
 
 	i = 0;
+	if (file[i] == '.')
+		i++;
 	while (file[i])
 	{
 		if (file[i] == '.')
@@ -64,4 +66,5 @@ void		parse_file(char *file, t_scene *scene)
 	close(fd);
 	if (scene->has_res == 0 || scene->has_cam == 0)
 		fatal_error_msg("023");
+	msg("110");
 }

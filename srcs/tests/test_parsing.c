@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/12 18:19:57 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/15 22:13:10 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/25 15:24:56 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	test_parsing(t_scene *scene)
 	color = amb_light->color;
 	
 	
-	printf("\n\nResolution x = %f, y = = %f\n", res->x, res->y); //printf
+	printf("\n\nResolution x = %d, y = = %d\n", res->x, res->y); //printf
 	printf("Amb Light Brightness = %f, r = %f, g = %f, b = %f\n", amb_light->brightness, color.r, color.g, color.b);
 	test_cam_parsing(scene);
 	test_light_parsing(scene);

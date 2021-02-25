@@ -104,6 +104,19 @@
 097 - FATAL - Cylinder coordinate with weird value.
 098 - FATAL - Cylinder has an out of bounds RGB number. Must be 0 <= n <= 255.
 
+
+# Msgs de Sucesso (110 - 150)
+
+110 - Parsing of the .rt file concluded with success. Starting MLX.
+111 - Mlx window created successfully. Will not save.
+112 - Will save the rendered image, no window will be created.
+
+
+# MLX Errors (200 - 300)
+
+200 - FATAL - MLX initialization failed!!
+
+
 # Achei objeto (990 a 998)
 
 990 - Achei R de Resolution

@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 19:58:11 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/25 14:38:56 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/25 15:24:04 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,8 +20,8 @@
 */
 typedef struct		s_res
 {
-	double				x;
-	double				y;
+	int				x;
+	int				y;
 }					t_res;
 
 typedef struct		s_amb_light
