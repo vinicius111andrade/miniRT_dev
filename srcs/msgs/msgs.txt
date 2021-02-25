@@ -115,6 +115,7 @@
 # MLX Errors (200 - 300)
 
 200 - FATAL - MLX initialization failed!!
+201 - FATAL - Failed to initialize image in MLX.
 
 
 # Achei objeto (990 a 998)

@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 19:58:11 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/25 15:24:04 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/25 21:19:43 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,18 @@
 # define MINIRT_STRUCTS_H
 
 # include "minirt_dependencies.h"
+
+/*
+** IMAGE CREATION STRUCT
+*/
+typedef struct		s_img
+{
+	void			*img;
+	char			*addr;
+	int				bpp;
+	int				line_len;
+	int				endian;
+}					t_img;
 
 /*
 ** SCENE STRUCTS
@@ -35,6 +47,7 @@ typedef struct		s_cam
 	t_tuples		origin;
 	t_tuples		direction;
 	double			fov;
+	t_img			img;
 	struct s_cam	*next;
 }					t_cam;
 
@@ -114,12 +127,26 @@ typedef struct	s_mlx
 {
 	void		*mlx;
 	void		*win;
-	t_cam		*cam;
-	t_cam		*begin;
-	int			bpp;
-	int			line_leng;
-	int			endian;
 }				t_mlx;
+
+/*
+** RAYTRACING STRUCTS
+*/
+typedef struct	s_hit
+{
+	float		time;
+	t_tuples	point;
+	t_tuples	normal;
+	int			colour;
+	void		*obj;
+}				t_hit;
+
+typedef struct	s_ray
+{
+	t_tuples	origin;
+	t_tuples	direction;
+	t_hit		hit;
+}				t_ray;
 
 /*
 ** GLOBAL STRUCT

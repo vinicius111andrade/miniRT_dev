@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 18:08:04 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/25 15:31:37 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/25 20:43:22 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ int		main(int argc, char *argv[])
 	parse_file(argv[1], &rt.scene);
 	//test_parsing(&rt.scene); //retirar o teste
 	start_mlx(&rt);
+	render_images(&rt);
+	//if (rt.save == 0)
+	//	run_mlx_window(&rt);
+	//else
+	//	save_bitmaps(&rt);
 	//exit(EXIT_FAILURE); //solucao temp pra desalocar tudo
 	//tem q fechar o mlx_loop em algum momento
 	return 0;

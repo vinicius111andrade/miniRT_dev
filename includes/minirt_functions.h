@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 20:01:21 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/23 20:20:52 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/25 21:19:20 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,27 +21,25 @@
 void		msg(char *id);
 void		error_msg(char *id);
 void		fatal_error_msg(char *error_msg);
-
 /*
 ** SCENE CREATION
 */
-t_res				*init_res(void);
-t_amb_light			*init_amb_light(void);
-t_cam				*init_cam(void);
-t_light				*init_light(void);
-t_pl				*init_pl(void);
-t_sp				*init_sp(void);
-t_sq				*init_sq(void);
-t_cy				*init_cy(void);
-t_tr				*init_tr(void);
-void				link_cam(t_scene *scene, t_cam *new_cam);
-void				link_light(t_scene *scene, t_light *new_light);
-void				link_plane(t_scene *scene, t_pl *new_plane);
-void				link_sphere(t_scene *scene, t_sp *new_sphere);
-void				link_square(t_scene *scene, t_sq *new_square);
-void				link_cylinder(t_scene *scene, t_cy *new_cylinder);
-void				link_triangle(t_scene *scene, t_tr *new_triangle);
-
+t_res		*init_res(void);
+t_amb_light	*init_amb_light(void);
+t_cam		*init_cam(void);
+t_light		*init_light(void);
+t_pl		*init_pl(void);
+t_sp		*init_sp(void);
+t_sq		*init_sq(void);
+t_cy		*init_cy(void);
+t_tr		*init_tr(void);
+void		link_cam(t_scene *scene, t_cam *new_cam);
+void		link_light(t_scene *scene, t_light *new_light);
+void		link_plane(t_scene *scene, t_pl *new_plane);
+void		link_sphere(t_scene *scene, t_sp *new_sphere);
+void		link_square(t_scene *scene, t_sq *new_square);
+void		link_cylinder(t_scene *scene, t_cy *new_cylinder);
+void		link_triangle(t_scene *scene, t_tr *new_triangle);
 /*
 ** RT FILE PARSING
 */
@@ -69,10 +67,10 @@ void		parse_sphere(t_scene *scene);
 void		parse_square(t_scene *scene);
 void		parse_cylinder(t_scene *scene);
 void		parse_triangle(t_scene *scene);
-
 /*
-** MLX HANDLING
+** MLX IMAGE RENDERING
 */
 void		start_mlx(t_rt *rt);
+void		render_img(t_rt *rt);
 
 #endif
