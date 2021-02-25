@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 19:58:11 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/23 20:35:04 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/25 14:38:56 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -127,8 +127,7 @@ typedef struct	s_mlx
 typedef struct	s_rt
 {
 	int			save;
-	int			size_x;
-	int			size_y;
+	t_res		wd_res;
 	t_img		img;
 	t_scene		scene;
 	t_mlx		mlx;
