@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/25 20:08:21 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/05 20:22:23 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/26 19:27:46 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,5 +55,6 @@ t_colors			hadamard_product(t_colors a, t_colors b)
 	prod.r = a.r * b.r;
 	prod.g = a.g * b.g;
 	prod.b = a.b * b.b;
+	prod = fit_color(prod);
 	return (prod);
 }

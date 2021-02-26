@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 19:58:11 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/25 21:19:43 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/26 19:25:23 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,9 @@ typedef struct		s_cam
 	t_tuples		origin;
 	t_tuples		direction;
 	double			fov;
+	t_tuples		hor;
+	t_tuples		ver;
+	t_tuples		llc;
 	t_img			img;
 	struct s_cam	*next;
 }					t_cam;
@@ -134,10 +137,10 @@ typedef struct	s_mlx
 */
 typedef struct	s_hit
 {
-	float		time;
+	double		time;
 	t_tuples	point;
 	t_tuples	normal;
-	int			colour;
+	t_colors		color;
 	void		*obj;
 }				t_hit;
 

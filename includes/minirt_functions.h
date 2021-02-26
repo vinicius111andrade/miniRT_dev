@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 20:01:21 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/25 21:19:20 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/26 17:12:48 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,5 +72,9 @@ void		parse_triangle(t_scene *scene);
 */
 void		start_mlx(t_rt *rt);
 void		render_img(t_rt *rt);
+/*
+** RAYTRACING
+*/
+t_ray		gen_ray(t_cam *cam, double x, double y);
 
 #endif
