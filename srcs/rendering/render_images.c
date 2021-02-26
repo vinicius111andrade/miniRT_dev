@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 20:43:39 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/26 17:16:34 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/26 22:48:16 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void		render_img(t_rt *rt)
 	int		x;
 	int		y;
 	t_ray	ray;
-	int		colour;
+	int		color_bin;
 	t_cam	*cam;
 
 	cam = rt->scene.cam;
@@ -66,8 +66,8 @@ void		render_img(t_rt *rt)
 		{
 			ray = gen_ray(cam, (double)x / rt->wd_res.x,
 					(double)y / rt->wd_res.y);
-			colour = raytrace(rt, &ray);
-			mlx_put_pixel2img(&cam->img, x, (rt->wd_res.y - 1) - y, colour);
+			color_bin = raytrace(rt, &ray);
+			mlx_put_pixel2img(&cam->img, x, (rt->wd_res.y - 1) - y, color_bin);
 		}
 	}
 	if (rt->save == 0)

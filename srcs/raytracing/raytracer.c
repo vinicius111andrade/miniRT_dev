@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 17:17:38 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/26 22:15:19 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/26 22:58:06 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void		iter_lst_objs(t_ray *ray, t_elem *elem, int *ret,
 	}
 }
 
-static int		check_intersect(t_rt *rt, t_ray *ray)
+static int		check_intersection(t_rt *rt, t_ray *ray)
 {
 	int			intersect;
 
@@ -54,7 +54,7 @@ static int		is_in_shadow(t_rt *rt, t_hit hit, t_light *light)
 
 	shadow.origin = add_tuples(hit.point, scale_tuples(EPSILON, hit.normal));
 	shadow.direction = normalize(sub_tuples(light->origin, shadow.origin));
-	return (intersect(rt, &shadow));
+	return (check_intersection(rt, &shadow));
 }
 
 t_colors		c_comp(t_light *light, t_hit hit)
@@ -82,9 +82,9 @@ int				raytrace(t_rt *rt, t_ray *ray)
 	t_colors	amb_color;
 	t_colors	color;
 	t_light		*light;
-	int			vis;
+	int			color_bin;
 
-	if (intersect(rt, ray) == 0)
+	if (check_intersection(rt, ray) == 0)
 		return (0);
 	amb_color = scale_colors(rt->scene.amb_light->brightness,
 								rt->scene.amb_light->color);
@@ -92,9 +92,10 @@ int				raytrace(t_rt *rt, t_ray *ray)
 	light = rt->scene.light;
 	while (light)
 	{
-		vis = !in_shadow(rt, ray->hit, light);
-		color = add_colors(color, vis * c_comp(light, ray->hit));
+		if(!in_shadow(rt, ray->hit, light)) //vis not needed i think, it just nulifies the color add when it is in shadow
+			color = add_colors(color, c_comp(light, ray->hit));
 		light = light->next;
 	}
-	return (color);
+	color_bin = argb_to_int(color); //ver se o alpha ta correto, ta setado pra 255
+	return (color_bin);
 }
