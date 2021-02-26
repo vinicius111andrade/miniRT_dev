@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 17:17:38 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/26 19:44:31 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/26 22:15:19 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ static int		check_intersect(t_rt *rt, t_ray *ray)
 
 	// here it goes through every object in the list
 
+	// test_spheres vai iterar por cada sp e se qlqr hit_sp retornar 1 ela retorna 1 tbm
+	if (rt->scene.sp != 0)
+		intersect = hit_all_spheres(ray, rt->scene.sp);
 	// if (rt->scene.sp != 0)
 	// 	iter_lst_objs(ray, rt->scene.sp, &ret, *hit_sp);
 	// if (rt->scene.pl != 0)

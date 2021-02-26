@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 20:01:21 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/26 17:12:48 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/26 22:33:46 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,5 +76,9 @@ void		render_img(t_rt *rt);
 ** RAYTRACING
 */
 t_ray		gen_ray(t_cam *cam, double x, double y);
+void		bhaskara(double a, double b, double c, double *res);
+t_tuples	get_hit_point(t_ray ray);
+int			hit_all_spheres(t_ray *ray, t_sp *sphere);
+int			hit_this_sphere(t_ray *ray, t_sp *sphere);
 
 #endif

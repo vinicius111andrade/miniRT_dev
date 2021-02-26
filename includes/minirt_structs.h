@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 19:58:11 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/26 19:25:23 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/02/26 20:05:26 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -140,7 +140,7 @@ typedef struct	s_hit
 	double		time;
 	t_tuples	point;
 	t_tuples	normal;
-	t_colors		color;
+	t_colors	color;
 	void		*obj;
 }				t_hit;
 
