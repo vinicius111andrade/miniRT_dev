@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/23 20:01:21 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/26 22:43:29 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/03/01 22:17:49 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,10 +72,13 @@ void		parse_triangle(t_scene *scene);
 */
 void		start_mlx(t_rt *rt);
 void		render_img(t_rt *rt);
+void		put_pixel2img(t_imgrt *img, int x, int y, int colour);
 /*
 ** RAYTRACING
 */
 t_ray		gen_ray(t_cam *cam, double x, double y);
+int			raytrace(t_rt *rt, t_ray *ray);
+t_colors	c_comp(t_light *light, t_hit hit);
 void		bhaskara(double a, double b, double c, double *res);
 t_tuples	get_hit_point(t_ray ray);
 int			hit_all_spheres(t_ray *ray, t_sp *sphere);

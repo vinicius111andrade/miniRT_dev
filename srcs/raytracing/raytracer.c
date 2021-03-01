@@ -6,21 +6,11 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 17:17:38 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/02/26 22:58:06 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/03/01 18:33:40 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
-
-static void		iter_lst_objs(t_ray *ray, t_elem *elem, int *ret,
-								int (*ft)(t_ray *ray, t_elem *elem))
-{
-	while (elem)
-	{
-		*ret |= (*ft)(ray, elem);
-		elem = elem->next;
-	}
-}
 
 static int		check_intersection(t_rt *rt, t_ray *ray)
 {
@@ -71,8 +61,9 @@ t_colors		c_comp(t_light *light, t_hit hit)
 		light_brightness = 0;
 	else
 		light_brightness = (light->brightness * gain * ALBEDO) /
-						(4.0 * M_PI * r2);
-	return (c_prod(c_add(0, c_scale(hit.color, light_brightness)),
+								(4.0 * PI_L12 * r2);
+	return (hadamard_product(
+				fit_color(scale_colors(light_brightness, hit.color)),
 				light->color));
 }
 
@@ -82,7 +73,7 @@ int				raytrace(t_rt *rt, t_ray *ray)
 	t_colors	amb_color;
 	t_colors	color;
 	t_light		*light;
-	int			color_bin;
+	int			argb;
 
 	if (check_intersection(rt, ray) == 0)
 		return (0);
@@ -92,10 +83,10 @@ int				raytrace(t_rt *rt, t_ray *ray)
 	light = rt->scene.light;
 	while (light)
 	{
-		if(!in_shadow(rt, ray->hit, light)) //vis not needed i think, it just nulifies the color add when it is in shadow
+		if(!is_in_shadow(rt, ray->hit, light)) //vis not needed i think, it just nulifies the color add when it is in shadow
 			color = add_colors(color, c_comp(light, ray->hit));
 		light = light->next;
 	}
-	color_bin = argb_to_int(color); //ver se o alpha ta correto, ta setado pra 255
-	return (color_bin);
+	argb = argb_to_int(fit_color(color)); //ver se o alpha ta correto, ta setado pra 255
+	return (argb);
 }

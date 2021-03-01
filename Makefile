@@ -6,7 +6,7 @@
 #    By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/07 17:23:51 by vde-melo          #+#    #+#              #
-#    Updated: 2021/02/17 21:15:37 by vde-melo         ###   ########.fr        #
+#    Updated: 2021/03/01 22:16:13 by vde-melo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ NAME			= minirt_dev
 DIR_SRCS		= ./srcs
 DIR_OBJS		= ./objs
 DIR_INCLUDES	= ./includes
-SUBDIRS			= colors tuples msgs scene tests parser handle_mlx main
+SUBDIRS			= colors tuples msgs scene tests parser rendering \
+					raytracing main
 
 SUBDIRS_SRCS	= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_SRCS)/, $(dir)))
 SUBDIRS_OBJS	= $(foreach dir, $(SUBDIRS), $(addprefix $(DIR_OBJS)/, $(dir)))
