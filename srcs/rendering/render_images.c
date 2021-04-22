@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 20:43:39 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/03/01 22:34:50 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/03/02 15:44:46 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ void		render_img(t_rt *rt)
 	if (!cam)
 		return ;
 	gen_extra_cam_info(rt, cam);
+	msg("114");
 	y = -1;
 	while (y++ < (rt->wd_res.y - 1))
 	{

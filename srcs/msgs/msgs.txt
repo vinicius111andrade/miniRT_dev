@@ -111,6 +111,7 @@
 111 - Mlx window created successfully. Will not save.
 112 - Will save the rendered image, no window will be created.
 113 - Rendering complete!
+114 - Starting pixel colouring...
 
 
 # MLX Errors (200 - 300)

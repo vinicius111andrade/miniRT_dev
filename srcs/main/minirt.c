@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 18:08:04 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/03/01 19:02:27 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/03/02 15:43:38 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,6 @@ int		main(int argc, char *argv[])
 	//	save_bitmaps(&rt);
 	//exit(EXIT_FAILURE); //solucao temp pra desalocar tudo
 	//tem q fechar o mlx_loop em algum momento
+	mlx_loop(rt.mlx.mlx);
 	return (0);
 }
