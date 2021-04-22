@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/26 17:17:38 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/03/01 18:33:40 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/04/22 21:50:06 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ static int		check_intersection(t_rt *rt, t_ray *ray)
 	// if (rt->scene.cy != 0)
 	// 	iter_lst_objs(ray, rt->scene.cy, &ret, *hit_cy);
 
+	//printf("\nintersect: %d", intersect);
 	return (intersect);// it returns a 1 or a 0 as true or false
 }
 
@@ -76,7 +77,9 @@ int				raytrace(t_rt *rt, t_ray *ray)
 	int			argb;
 
 	if (check_intersection(rt, ray) == 0)
+	{
 		return (0);
+	}
 	amb_color = scale_colors(rt->scene.amb_light->brightness,
 								rt->scene.amb_light->color);
 	color = hadamard_product(ray->hit.color, amb_color);
@@ -87,6 +90,8 @@ int				raytrace(t_rt *rt, t_ray *ray)
 			color = add_colors(color, c_comp(light, ray->hit));
 		light = light->next;
 	}
+	printf("\nraytracing...");
+	//printf("\nColor: %f, %f, %f, %f", color.a, color.r, color.g, color.b);
 	argb = argb_to_int(fit_color(color)); //ver se o alpha ta correto, ta setado pra 255
 	return (argb);
 }

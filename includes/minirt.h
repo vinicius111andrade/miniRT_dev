@@ -6,7 +6,7 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/02 17:47:49 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/03/01 17:57:03 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/04/22 21:42:18 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 ** MiniRT Test
 */
 # include "tests.h" //tirar depois, tirar da pasta includes tbm
+# include <stdio.h>
 
 /*
 ** Constants
