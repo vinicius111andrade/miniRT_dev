@@ -6,13 +6,13 @@
 /*   By: vde-melo <vde-melo@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/25 20:43:39 by vde-melo          #+#    #+#             */
-/*   Updated: 2021/04/22 21:16:53 by vde-melo         ###   ########.fr       */
+/*   Updated: 2021/04/27 20:09:34 by vde-melo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "minirt.h"
 
-static void	gen_cam_render_info(t_scene *scene, t_cam *cam)
+static void	gen_render_info(t_scene *scene, t_cam *cam)
 {
 	double		vp[2];
 	t_tuples	w;
@@ -23,7 +23,8 @@ static void	gen_cam_render_info(t_scene *scene, t_cam *cam)
 	{
 		vp[0] = 2 * tan(cam->fov / 2);
 		vp[1] = vp[0] * (double)scene->res->y / scene->res->x;
-		w = normalize(neg_tuples(cam->direction));
+		cam->direction = neg_tuples(cam->direction);
+		w = normalize(cam->direction);
 		u = crossproduct(vector(0, 1, 0), w);
 		v = crossproduct(w, u);
 		cam->hor = scale_tuples(vp[0], u);
@@ -35,7 +36,7 @@ static void	gen_cam_render_info(t_scene *scene, t_cam *cam)
 	}
 }
 
-static void	gen_extra_cam_info(t_rt *rt, t_cam *cam)
+static void	gen_canvas(t_rt *rt, t_cam *cam)
 {
 	if (!(cam->img.img = mlx_new_image(rt->mlx.mlx, rt->wd_res.x,
 					 rt->wd_res.y)))
@@ -43,7 +44,7 @@ static void	gen_extra_cam_info(t_rt *rt, t_cam *cam)
 	if (!(cam->img.addr = mlx_get_data_addr(cam->img.img, &cam->img.bpp,
 					&cam->img.line_len, &cam->img.endian)))
 		fatal_error_msg("201");
-	gen_cam_render_info(&rt->scene, cam);
+	gen_render_info(&rt->scene, cam);
 }
 
 void		render_img(t_rt *rt)
@@ -57,7 +58,7 @@ void		render_img(t_rt *rt)
 	cam = rt->scene.cam;
 	if (!cam)
 		return ;
-	gen_extra_cam_info(rt, cam);
+	gen_canvas(rt, cam);
 	msg("114");
 	y = -1;
 	while (y++ < (rt->wd_res.y - 1))
